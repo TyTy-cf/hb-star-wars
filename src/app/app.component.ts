@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Planet} from '../models/planet';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,5 @@ export class AppComponent {
   title = 'base-project';
 
   constructor() {
-
   }
 }

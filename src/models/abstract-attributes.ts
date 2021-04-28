@@ -29,7 +29,7 @@ export abstract class AbstractAttributes {
     return this._guid;
   }
 
-  protected constructor() {
+  public constructor() {
     this._guid = Guid.create();
   }
 }
