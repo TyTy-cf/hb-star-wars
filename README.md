@@ -54,8 +54,10 @@ Je laisse libre cours à votre imagination pour les types des attributs, cependa
   - Nom : Hoth
   - Image : selon votre convenance
 
+
   - Nom : Tatooine
   - Image : selon votre convenance
+
 
   - Nom : Aldérande
   - Image : selon votre convenance
@@ -65,8 +67,10 @@ Je laisse libre cours à votre imagination pour les types des attributs, cependa
 - Nom : Empire
 - Image : selon votre convenance
 
+
 - Nom : Rebelle
 - Image : selon votre convenance
+
 
 - Nom : Mandaloriens
 - Image : selon votre convenance
@@ -78,10 +82,12 @@ Je laisse libre cours à votre imagination pour les types des attributs, cependa
 - Dégâts : 40
 - Temps recharge : 0
 
+
 - Nom : KX9 laser cannon
 - Image : https://static.wikia.nocookie.net/starwars/images/0/01/X-wing_KX9_laser_cannon_battlefront.png/revision/latest/scale-to-width-down/1000?cb=20160704064823
 - Dégâts : 20
 - Temps recharge : 0
+
 
 - Nom : MG7 proton torpedo launcher
 - Image : https://static.wikia.nocookie.net/starwars/images/b/b7/MG7_proton_torpedo_launcher_battlefront.png/revision/latest/scale-to-width-down/1000?cb=20160704064839
@@ -97,6 +103,7 @@ Je laisse libre cours à votre imagination pour les types des attributs, cependa
 - Blindage : 14
 - Point de vie : 500
 - Armes : 2 Ls1-Laser cannons
+
 
 - Nom : X-Wing
 - Image : https://static.wikia.nocookie.net/starwars/images/6/60/Xwing-SWB.jpg/revision/latest/scale-to-width-down/500?cb=20160704070524
