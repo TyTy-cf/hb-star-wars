@@ -1,27 +1,34 @@
-# BaseProject
+# HB : Star Wars : Space Battle
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.9.
+## 1/ Création des classes
 
-## Development server
+Je laisse libre cours à votre imagination pour les types des attributs, cependant faite que ça soit cohérent :)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+(PS : classe abstraite OK pour "Planet" & "Faction")
 
-## Code scaffolding
+- Classe **"Planet"** : elle représentera le lieu de la bataille, elle est caractérisée par :
+  - Son nom
+  - Une image (on se contentera de l'url de celle-ci => information pour le type de l'attribut)
+  
+- Classe **"Faction"** : elle représente la faction choisit par le joueur, elle est caractérisée par :
+  - Son nom
+  - Une image (on se contentera de l'url de celle-ci => information pour le type de l'attribut)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Classe **"Starship"** : elle représente un vaisseau
+  (PS : pas de classe abstraite ici pour simplifier)
+  - Son nom
+  - Une image (on se contentera de l'url de celle-ci => information pour le type de l'attribut)
+  - Un "Starship" est affilié à une faction
+  - Le "Starship" est-il équipé de l'Hyperpropulsion ?
+  - Un "Starship" a un blindage, qui représente la réduction des dégâts qu'il subira
+  - Un "Starship" a un nombre de point de vie, qui représente le nombre de dégâts qu'il peut prendre avant d'exploser
+  - Un "Starship" a des "Weapons" (voir classe suivante) (PS : oui, il peut en avoir plusieurs)
 
-## Build
+- Classe **"Weapon"** : elle représente une arme qu'un vaisseau peut avoir
+  (PS : pas de classe abstraite ici pour simplifier)
+  - Son nom
+  - Son image
+  - Une valeur de dégâts, qui représente le nombre de vie à retirer à sa cible
+  - Temps de recharge, qui représente le fait qu'une arme ne peut pas être utilisé plusieurs fois de suite
+    (PS : pour simplifier le fonctionnement du temps de recharge, on imaginera qu'il y a une notion de tour)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
