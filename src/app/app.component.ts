@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   audio: HTMLAudioElement;
   buttonLabel: string;
@@ -16,18 +16,20 @@ export class AppComponent {
     // Va rechercher la chanson à utiliser
     this.audio.src = '../assets/sound/theme/ThemeSong.mp3';
     // Baisse le son
-    this.audio.volume = 0.05;
+    this.audio.volume = 0.01;
     // Charger la chanson et la jouer
-    this.audio.load();
     // On force la musique au lancement : ont met le boolean à false, puis on appelle la fonction audioOnOff
     // Pour ne pas avoir le son au démarrage il faut mettre isPlay à true
     this.isPlay = true;
-    this.audioOnOff().then();
+  }
+
+  async ngOnInit(): Promise<void> {
+    await this.audioOnOff();
   }
 
   async audioOnOff(): Promise<void> {
     if (this.isPlay) {
-      await this.audio.pause();
+      this.audio.pause();
       this.buttonLabel = 'Play Star Wars Theme !';
       this.isPlay = false;
     } else {

@@ -14,8 +14,6 @@ export abstract class AbstractAttributesService {
     this.initializeDatas();
   }
 
-  // Méthode abstraite : on déclare juste son synopsis (visibilité, nom et retour) sans l'implémenter
-  // On laisse les classes filles décider de ce qu'elles feront, mais toutes les classes fille l'auront
   protected abstract initializeDatas(): void;
 
   public getArrayAbstractAttributes(): Array<AbstractAttributes> {
