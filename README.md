@@ -52,28 +52,29 @@ Je laisse libre cours à votre imagination pour les types des attributs, cependa
 #### 2.1.1/ Objets Planet
 
   - Nom : Hoth
-  - Image : selon votre convenance
-
+  - Image : https://e7.pngegg.com/pngimages/111/926/png-clipart-hoth-m-02j71-planet-earth-echo-base-roblox-vip-sphere-earth.png
+  - Image : 'assets/images/planet/nomImagePourLaPlaneteHoth.png'
+    (Dans la balise html : `<img src="{{planet.pathImage}}" alt="">`)
 
   - Nom : Tatooine
-  - Image : selon votre convenance
+  - Image : https://c3.klipartz.com/pngpicture/640/693/sticker-png-png-planets-of-star-wars-tatooine-icon-thumbnail.png
 
 
   - Nom : Aldérande
-  - Image : selon votre convenance
+  - Image : https://p1.hiclipart.com/preview/430/13/161/png-planets-of-star-wars-alderaan-icon-png-icon.jpg
 
 #### 2.1.2/ Objets Faction
 
 - Nom : Empire
-- Image : selon votre convenance
+- Image : https://w7.pngwing.com/pngs/83/280/png-transparent-palpatine-anakin-skywalker-star-wars-empire-at-war-forces-of-corruption-stormtrooper-galactic-empire-stormtrooper-emblem-logo-symmetry.png
 
 
 - Nom : Rebelle
-- Image : selon votre convenance
+- Image : https://stock.flashmode.tn/wp-content/uploads/2020/06/star-wars-rebel-logo-png-834.png
 
 
 - Nom : Mandaloriens
-- Image : selon votre convenance
+- Image : https://img1.pnghut.com/4/16/20/qig08DpHCA/joint-galactic-empire-jango-fett-silhouette-symbol.jpg
 
 #### 2.1.3/ Objets Weapon
 
@@ -85,7 +86,7 @@ Je laisse libre cours à votre imagination pour les types des attributs, cependa
 
 - Nom : KX9 laser cannon
 - Image : https://static.wikia.nocookie.net/starwars/images/0/01/X-wing_KX9_laser_cannon_battlefront.png/revision/latest/scale-to-width-down/1000?cb=20160704064823
-- Dégâts : 20
+- Dégâts : 35
 - Temps recharge : 0
 
 
@@ -97,24 +98,37 @@ Je laisse libre cours à votre imagination pour les types des attributs, cependa
 #### 2.1.4/ Objets Starship
 
 - Nom : TIE/LN starfighter
-- Image : https://static.wikia.nocookie.net/starwars/images/9/92/TIEfighter2-Fathead.png/revision/latest/scale-to-width-down/500?cb=20161109040841
+- Image : https://www.pngfind.com/pngs/m/26-268947_step-star-wars-tie-fighter-png-transparent-png.png
 - Faction : Empire
 - Hyperpropulsion : non
 - Blindage : 14
 - Point de vie : 500
-- Armes : 2 Ls1-Laser cannons
+- Armes : Ls1-Laser cannons
 
 
 - Nom : X-Wing
-- Image : https://static.wikia.nocookie.net/starwars/images/6/60/Xwing-SWB.jpg/revision/latest/scale-to-width-down/500?cb=20160704070524
+- Image : https://www.pngjoy.com/pngm/330/6196347_star-wars-laser-star-wars-x-wing-png.png
 - Faction : Rebelle
 - Hyperpropulsion : oui
 - Blindage : 15
 - Point de vie : 480
-- Armes : 2 MG7 proton torpedo launcher et 4 KX9 laser cannon
+- Armes : MG7 proton torpedo launcher et KX9 laser cannon
 
 (Rusez pour les Armes et Faction du Starship !)
 
+## 3/ Création des components principaux
+
+- Vous pouvez vous créer un component de test, dans lequel vous appellerez vos Services afin de vérifier que tout fonctionne.
+
+### 3.1/ Création d'un component de nom : planet-index
+
+- Le rôle de ce component est d'afficher toutes les planètes (avec leur images si vous les avez incluses)
+  (PS : attention à partir de maintenant je regarderai mieux l'html/css, et je veux que la page soit responsive, regardez la documentation de Bootstrap !)
+
+### 3.2/ Création d'un component de nom : faction-index
+
+- Le rôle de ce component est d'afficher les factions avec images et non, afin de proposer à l'utilisateur de choisir sa faction.
+  Pour le moment, vous afficherez les factions disponibles, avec un css sympathique (par exemple que l'image bouge légèrement lorsque l'utilisateur passe sa souris dessus)
 
 
 

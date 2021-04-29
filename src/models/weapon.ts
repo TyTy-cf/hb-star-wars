@@ -6,6 +6,8 @@ export class Weapon extends AbstractAttributes {
   private _damage: number;
   // tslint:disable-next-line:variable-name
   private _coolDown: number;
+  // tslint:disable-next-line:variable-name
+  private _onCoolDown: number;
 
   get damage(): number {
     return this._damage;
@@ -23,4 +25,11 @@ export class Weapon extends AbstractAttributes {
     this._coolDown = value;
   }
 
+  get onCoolDown(): number {
+    return this._onCoolDown;
+  }
+
+  set onCoolDown(value: number) {
+    this._onCoolDown = value;
+  }
 }
