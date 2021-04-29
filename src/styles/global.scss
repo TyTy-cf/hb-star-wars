@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  background-image: url('https://cdn.wallpapersafari.com/31/91/uJro3p.jpg');
+  background-size: 100%;
+  color: $app-font-color;
+}
+
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header, .footer {
+  background-color: $app-background-color-dark-10;
+  color: $title-font-color;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  min-height: 100px;
+}
+
+.main-container {
+  flex-grow: 1;
+}
+
+.btn-starwars {
+  color: $title-font-color;
+  background-color: $app-background-color;
+  border-color: $app-background-color-light-10;
+  box-shadow: 0 0 0 0.15rem $app-background-color-light-30;
+
+  &:hover {
+    color: $app-font-color;
+    background-color: $app-background-color-light-40;
+  }
+}

@@ -56,6 +56,7 @@ Je laisse libre cours à votre imagination pour les types des attributs, cependa
   - Image : 'assets/images/planet/nomImagePourLaPlaneteHoth.png'
     (Dans la balise html : `<img src="{{planet.pathImage}}" alt="">`)
 
+
   - Nom : Tatooine
   - Image : https://c3.klipartz.com/pngpicture/640/693/sticker-png-png-planets-of-star-wars-tatooine-icon-thumbnail.png
 
@@ -135,14 +136,6 @@ Je laisse libre cours à votre imagination pour les types des attributs, cependa
 - Ajouter une route de nom 'faction' qui permet d'aller sur le component **faction-index**
 - Ajouter une route de nom 'planet' qui permet d'aller sur le component **planet-index**
 - Lorsqu'on lance l'application, on doit arriver sur le component **faction-index**
-- Il est temps de prévoir une belle page d'accueil à notre application !
-  Intégrez le principe de footer / header, utilisé dans le projet initial.
-  - Le Header contiendra : un titre de valeur 'HB - Star Wars SpaceGular'
-  - Le footer contiendra : un paragraphe de contenu '@HB - Star Wars SpaceGular'
-  - Bien sûr faites en sorte que chacun prenne correctement sa place sur la page (n'hésitez pas à reprendre les classes css créées pour le projet initial !)
-  - Vous êtes libre du choix des couleurs, faites que ça soit quand même sympathique à regarder et pas trop agressif ou terne !
-  - À voir le rendu, et si ça ne surcharge pas trop l'interface, mais vous pouvez mettre une image de fond pour toute l'application, histoire que l'on soit bercé dans le thème
-    (Par exemple : https://cdn.wallpapersafari.com/31/91/uJro3p.jpg)
     
 ## 5/ Amélioration de l'interface et navigation
 

@@ -56,7 +56,7 @@ export class Starship extends AbstractAttributes {
     this._weapons = new Array<Weapon>();
   }
 
-  addWeapons(weapon: Weapon): void {
+  addWeapon(weapon: Weapon): void {
     if (weapon) {
       this._weapons.push(weapon);
     }
