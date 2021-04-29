@@ -130,6 +130,29 @@ Je laisse libre cours à votre imagination pour les types des attributs, cependa
 - Le rôle de ce component est d'afficher les factions avec images et non, afin de proposer à l'utilisateur de choisir sa faction.
   Pour le moment, vous afficherez les factions disponibles, avec un css sympathique (par exemple que l'image bouge légèrement lorsque l'utilisateur passe sa souris dessus)
 
+## 4/ Ajout de la navigation
+
+- Ajouter une route de nom 'faction' qui permet d'aller sur le component **faction-index**
+- Ajouter une route de nom 'planet' qui permet d'aller sur le component **planet-index**
+- Lorsqu'on lance l'application, on doit arriver sur le component **faction-index**
+- Il est temps de prévoir une belle page d'accueil à notre application !
+  Intégrez le principe de footer / header, utilisé dans le projet initial.
+  - Le Header contiendra : un titre de valeur 'HB - Star Wars SpaceGular'
+  - Le footer contiendra : un paragraphe de contenu '@HB - Star Wars SpaceGular'
+  - Bien sûr faites en sorte que chacun prenne correctement sa place sur la page (n'hésitez pas à reprendre les classes css créées pour le projet initial !)
+  - Vous êtes libre du choix des couleurs, faites que ça soit quand même sympathique à regarder et pas trop agressif ou terne !
+  - À voir le rendu, et si ça ne surcharge pas trop l'interface, mais vous pouvez mettre une image de fond pour toute l'application, histoire que l'on soit bercé dans le thème
+    (Par exemple : https://cdn.wallpapersafari.com/31/91/uJro3p.jpg)
+    
+## 5/ Amélioration de l'interface et navigation
+
+- Il faut maintenant créer un component de nom 'starship-faction'
+- Son rôle est d'afficher tous les vaisseaux à partir d'une faction ou un message informant l'utilisateur qu'aucun vaisseau n'existe pour cette faction
+- Le component doit récupérer l'information de la faction à partir d'un **@Input** (il est donc le component fille), depuis le component **faction-index** (qui sera le component mère)
+- L'action permettant l'envoie de la faction au component **starship-faction** est le **clic sur l'une des images**
+- Ajouter un message à l'utilisateur pour lui dire de sélectionner la faction dans laquelle il souhaite jouer (dans le component **faction-index**)
+- Ajouter un moyen d'informer l'utilisateur lui permettant de voir sur quelle faction il a cliqué (trouver un moyen de faire ressortir l'image sélectionnée)
+
 
 
 
