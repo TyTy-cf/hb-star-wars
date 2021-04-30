@@ -1,4 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+import {StarshipService} from '../services/starship.service';
+import {FactionService} from '../services/faction.service';
+import {WeaponService} from '../services/weapon.service';
 
 @Component({
   selector: 'app-root',

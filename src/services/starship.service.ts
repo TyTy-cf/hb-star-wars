@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {AbstractAttributesService} from './abstract-attributes.service';
 import {Starship} from '../models/starship';
 import {Guid} from 'guid-typescript';

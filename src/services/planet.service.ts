@@ -3,7 +3,7 @@ import {AbstractAttributesService} from './abstract-attributes.service';
 import {Planet} from '../models/planet';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PlanetService extends AbstractAttributesService {
 
@@ -26,5 +26,3 @@ export class PlanetService extends AbstractAttributesService {
     this.addAbstractAttributes(alderande);
   }
 }
-
-// C:\Developpement\Cours\Angular\Cours\HB\base-project\src\assets\images

@@ -1,15 +1,11 @@
-import { Injectable } from '@angular/core';
 import {AbstractAttributes} from '../models/abstract-attributes';
 import {Guid} from 'guid-typescript';
 
-@Injectable({
-  providedIn: 'root'
-})
 export abstract class AbstractAttributesService {
 
   protected arrayAbstractAttributes: Array<AbstractAttributes>;
 
-  protected constructor() {
+  public constructor() {
     this.arrayAbstractAttributes = new Array<AbstractAttributes>();
     this.initializeDatas();
   }
