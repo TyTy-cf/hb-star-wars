@@ -20,7 +20,7 @@ export class StarshipService extends AbstractAttributesService{
     const tie = new Starship();
     tie.name = 'TIE/LN starfighter';
     tie.pathImage = path + 'tie-starfighter.png';
-    tie.faction = this.factionService.getArrayAbstractAttributes()[0];
+    tie.faction = this.factionService.getArrayFaction()[0];
     tie.hyperDrive = false;
     tie.shielding = 14;
     tie.hitPoint = 500;
@@ -30,7 +30,7 @@ export class StarshipService extends AbstractAttributesService{
     const xWing = new Starship();
     xWing.name = 'X-Wing';
     xWing.pathImage = path + 'x-wing.png';
-    xWing.faction = this.factionService.getArrayAbstractAttributes()[1];
+    xWing.faction = this.factionService.getArrayFaction()[1];
     xWing.hyperDrive = true;
     xWing.shielding = 15;
     xWing.hitPoint = 480;

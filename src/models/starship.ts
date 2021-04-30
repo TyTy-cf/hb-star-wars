@@ -61,5 +61,4 @@ export class Starship extends AbstractAttributes {
       this._weapons.push(weapon);
     }
   }
-
 }

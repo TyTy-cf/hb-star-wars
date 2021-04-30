@@ -9,7 +9,7 @@ export abstract class AbstractAttributesService {
 
   protected arrayAbstractAttributes: Array<AbstractAttributes>;
 
-  protected constructor() {
+  public constructor() {
     this.arrayAbstractAttributes = new Array<AbstractAttributes>();
     this.initializeDatas();
   }

@@ -1,7 +1,6 @@
 import {AbstractAttributes} from './abstract-attributes';
 
 export class Weapon extends AbstractAttributes {
-
   // tslint:disable-next-line:variable-name
   private _damage: number;
   // tslint:disable-next-line:variable-name
