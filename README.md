@@ -146,6 +146,10 @@ Je laisse libre cours à votre imagination pour les types des attributs, cependa
 - Ajouter un message à l'utilisateur pour lui dire de sélectionner la faction dans laquelle il souhaite jouer (dans le component **faction-index**)
 - Ajouter un moyen d'informer l'utilisateur lui permettant de voir sur quelle faction il a cliqué (trouver un moyen de faire ressortir l'image sélectionnée)
 
+## 6/ Préparation au jeu 
+
+- L'idée de cette partie est de faire un component qui a pour but d'afficher une "card" de vaisseau, avec son image, son nom (en dessous de l'image), un récapitulatif des stats du vaisseau, et les différentes Weapon du vaisseau, sous forme de bouton avec l'image de la Weapon.
+
 
 
 
