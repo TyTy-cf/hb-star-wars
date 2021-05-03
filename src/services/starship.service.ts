@@ -1,5 +1,4 @@
 import {Injectable} from '@angular/core';
-import {AbstractAttributesService} from './abstract-attributes.service';
 import {Starship} from '../models/starship';
 import {Guid} from 'guid-typescript';
 import {FactionService} from './faction.service';
@@ -8,13 +7,19 @@ import {WeaponService} from './weapon.service';
 @Injectable({
   providedIn: 'root'
 })
-export class StarshipService extends AbstractAttributesService{
+export class StarshipService {
 
-  constructor(private factionService: FactionService, private weaponService: WeaponService) {
-    super();
+  arrayStarships: Array<Starship>;
+
+  constructor(
+    private factionService: FactionService,
+    private weaponService: WeaponService
+  ) {
+    this.arrayStarships = new Array<Starship>();
+    this.initializeDatas();
   }
 
-  protected initializeDatas(): void {
+  private initializeDatas(): void {
     const path = 'assets/images/planet/';
 
     const tie = new Starship();
@@ -25,7 +30,7 @@ export class StarshipService extends AbstractAttributesService{
     tie.shielding = 14;
     tie.hitPoint = 500;
     tie.addWeapon(this.weaponService.getArrayWeapon()[0]);
-    this.arrayAbstractAttributes.push(tie);
+    this.arrayStarships.push(tie);
 
     const xWing = new Starship();
     xWing.name = 'X-Wing';
@@ -36,14 +41,14 @@ export class StarshipService extends AbstractAttributesService{
     xWing.hitPoint = 480;
     xWing.addWeapon(this.weaponService.getArrayWeapon()[1]);
     xWing.addWeapon(this.weaponService.getArrayWeapon()[2]);
-    this.arrayAbstractAttributes.push(xWing);
+    this.arrayStarships.push(xWing);
   }
 
   getArrayStarship(): Array<Starship> {
-    return (this.getArrayAbstractAttributes() as Array<Starship>);
+    return this.arrayStarships;
   }
 
-  getStarshipByGuid(guid: Guid): Starship {
-    return (this.getAbstractAttributesByGuid(guid) as Starship);
+  public getStarshipByFactionGuid(guid: Guid): Array<Starship> {
+    return this.arrayStarships.filter((ss) => ss.faction.guid.equals(guid));
   }
 }
