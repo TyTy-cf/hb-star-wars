@@ -1,5 +1,4 @@
 import {Inject, Injectable} from '@angular/core';
-import {AbstractAttributesService} from './abstract-attributes.service';
 import {Starship} from '../models/starship';
 import {Guid} from 'guid-typescript';
 import {FactionService} from './faction.service';
@@ -23,7 +22,7 @@ export class StarshipService {
   }
 
   private initializeDatas(): void {
-    const path = 'assets/images/planet/';
+    const path = 'assets/images/starship/';
 
     const tie = new Starship();
     tie.name = 'TIE/LN starfighter';
