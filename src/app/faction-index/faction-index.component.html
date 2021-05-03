@@ -6,7 +6,7 @@
     <div class="img-planet text-center faction my-5" *ngFor="let faction of arrayFaction">
       <div class="faction-{{ faction.name }}" (mouseover)="setCssByFaction(faction.color, faction.name)" (mouseout)="refreshCssColor(faction.name)">
         <h3 class="title-planet" id="title-planet-{{ faction.name }}">{{ faction.name }}</h3>
-        <img (click)="selectedFactionByGuid(faction.guid)"  src="{{ faction.pathImage }}" (mouseout)="offSelected()">
+        <img (click)="selectedFactionByGuid(faction.guid)"  src="{{ faction.pathImage }}" >
       </div>
     </div>
   </div>

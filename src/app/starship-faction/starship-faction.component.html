@@ -1,9 +1,10 @@
 
 <div *ngIf="guidFaction; else noGuid">
   <div *ngIf="starship.length > 0; else noStarship">
-    <div *ngFor="let star of starship">
+    <div class="card-vaisseau" *ngFor="let star of starship">
       <p>{{star.name}}</p>
-      <img src="{{star.pathImage}}" alt="{{star.name}}">
+      <p>{{star.guid}}</p>
+      <img routerLink="planet/{{star.guid.toString()}}" src="{{star.pathImage}}" alt="{{star.name}}">
     </div>
   </div>
 </div>

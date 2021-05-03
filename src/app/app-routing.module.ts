@@ -5,8 +5,8 @@ import {PlanetIndexComponent} from './planet-index/planet-index.component';
 
 const routes: Routes = [
   {path: 'faction', component: FactionIndexComponent},
-  {path: 'planet', component: PlanetIndexComponent},
-  {path: '', component: FactionIndexComponent}
+  {path: '', component: FactionIndexComponent},
+  {path: 'planet/:starshipGuid', component: PlanetIndexComponent},
 ];
 
 @NgModule({

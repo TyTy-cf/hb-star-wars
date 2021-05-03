@@ -145,7 +145,7 @@ Je laisse libre cours à votre imagination pour les types des attributs, cependa
 - L'action permettant l'envoie de la faction au component **starship-faction** est le **clic sur l'une des images**
 - Ajouter un message à l'utilisateur pour lui dire de sélectionner la faction dans laquelle il souhaite jouer (dans le component **faction-index**)
 - Ajouter un moyen d'informer l'utilisateur lui permettant de voir sur quelle faction il a cliqué (trouver un moyen de faire ressortir l'image sélectionnée)
-
+- Ajouter musique selon Faction (Philippe)
 
 
 

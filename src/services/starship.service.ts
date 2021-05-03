@@ -17,8 +17,6 @@ export class StarshipService {
   ) {
     this.arrayStarships = new Array<Starship>();
     this.initializeDatas();
-    console.log('Je suis le StarshipService, je suis bien créé avec mes deux sous services et j\'ai ' +
-      this.arrayStarships.length + ' vaisseaux');
   }
 
   private initializeDatas(): void {
@@ -48,6 +46,15 @@ export class StarshipService {
 
   getArrayStarship(): Array<Starship> {
     return this.arrayStarships;
+  }
+
+  public getStarshipByGuid(guid: Guid): Starship {
+    const anObject = this.arrayStarships.filter((aa) => aa.guid.equals(guid));
+    console.log(anObject.length);
+    if (anObject.length === 0) {
+      throw new Error('Aucun objet avec ce Guid n\'a été trouvé');
+    }
+    return anObject[0];
   }
 
   public getStarshipByFactionGuid(guid: Guid): Array<Starship> {

@@ -31,24 +31,8 @@ export class FactionIndexComponent implements OnInit {
     titleFaction.style.color = '#D6D61CFF';
   }
 
-  // tslint:disable-next-line:typedef
-  selectedFactionByGuid(factionGuid: Guid){
+  selectedFactionByGuid(factionGuid: Guid): void{
     this.selectGuidFaction = factionGuid.toString();
     console.log(this.selectGuidFaction);
-    // const image = document.getElementById('imageId');
-    // image.style.display = '';
-    // const factionImage = document.getElementById('factionImage');
-    // factionImage.style.position = 'absolute';
-    // image.style.zIndex = '1';
-    // factionImage.style.opacity = '0.1';
-    // image.style.height = '100px';
   }
-  // tslint:disable-next-line:typedef
-  // offSelected(){
-  //   const image = document.getElementById('imageId');
-  //   image.style.display = 'none';
-  //   const factionImage = document.getElementById('factionImage');
-  //   factionImage.style.opacity = '1';
-  //   factionImage.style.position = '';
-  // }
 }
