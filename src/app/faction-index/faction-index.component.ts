@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Faction} from '../../models/faction';
 import {FactionService} from '../../Services/faction.service';
+import {Guid} from 'guid-typescript';
 
 @Component({
   selector: 'app-faction-index',
@@ -8,7 +9,10 @@ import {FactionService} from '../../Services/faction.service';
   styleUrls: ['./faction-index.component.scss']
 })
 export class FactionIndexComponent implements OnInit {
+
   arrayFaction: Array<Faction>;
+  selectGuidFaction: string;
+
   constructor(private factionService: FactionService) {
     this.arrayFaction = new Array<Faction>();
   }
@@ -20,11 +24,16 @@ export class FactionIndexComponent implements OnInit {
   setCssByFaction(color: string, faction: string): void {
     const titleFaction = document.getElementById('title-planet-' + faction);
     titleFaction.style.color = color;
-    // Penser à remettre la couleur initiale du précédent
   }
 
   refreshCssColor(faction: string): void {
     const titleFaction = document.getElementById('title-planet-' + faction);
     titleFaction.style.color = '#D6D61CFF';
   }
+
+  // tslint:disable-next-line:typedef
+  selectedFactionByGuid(factionGuid: Guid){
+    this.selectGuidFaction = factionGuid.toString();
+    console.log(this.selectGuidFaction);
+}
 }

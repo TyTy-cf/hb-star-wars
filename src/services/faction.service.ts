@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {AbstractAttributesService} from './abstract-attributes.service';
 import {Faction} from '../models/faction';
-import {Starship} from "../models/starship";
 
 @Injectable({
   providedIn: 'root'
@@ -28,14 +27,8 @@ export class FactionService extends AbstractAttributesService {
     mandalorien.pathImage = path + 'mandalorien.png';
     mandalorien.color = '#A9A9A9FF';
     this.addAbstractAttributes(mandalorien);
-
-    const kevin = new Faction();
-    kevin.name = 'Kévin';
-    kevin.pathImage = path + 'kevin.png';
-    kevin.color = '#BE66E0FF';
-    this.addAbstractAttributes(kevin);
   }
-  getArrayFaction(): Array<Faction> {
+  public getArrayFaction(): Array<Faction> {
     return (this.getArrayAbstractAttributes() as Array<Faction>);
   }
 }

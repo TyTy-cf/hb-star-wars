@@ -8,12 +8,14 @@ import {WeaponService} from '../Services/weapon.service';
 import {StarshipService} from '../Services/starship.service';
 import {FactionService} from '../Services/faction.service';
 import { FactionIndexComponent } from './faction-index/faction-index.component';
+import { StarshipFactionComponent } from './starship-faction/starship-faction.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PlanetIndexComponent,
-    FactionIndexComponent
+    FactionIndexComponent,
+    StarshipFactionComponent
   ],
   imports: [
     BrowserModule,
@@ -22,9 +24,7 @@ import { FactionIndexComponent } from './faction-index/faction-index.component';
   providers: [
     WeaponService,
     FactionService,
-    {
-      provide: StarshipService, useValue : [WeaponService, FactionService]
-    }
+    StarshipService,
   ],
   bootstrap: [AppComponent]
 })
