@@ -158,6 +158,7 @@ Je laisse libre cours à votre imagination pour les types des attributs, cependa
 - Point de vie : 560
 - Armes : L-s9 Laser cannons
 
+
 - Nom : TIE Avancé
 - Image : https://static.wikia.nocookie.net/frstarwars/images/c/c7/Rebels_TIE_Advanced_x1_Fathead.png/revision/latest?cb=20201021095218
 - Faction : Empire
@@ -165,6 +166,7 @@ Je laisse libre cours à votre imagination pour les types des attributs, cependa
 - Blindage : 16
 - Point de vie : 610
 - Armes : L-s9 Laser cannons, Lance missile à concussion
+
 
 - Nom : Navette T-4a
 - Image : https://static.wikia.nocookie.net/frstarwars/images/c/cb/Navette_de_classe_T-4a_Lambda.jpg/revision/latest/scale-to-width-down/350?cb=20160514175059
@@ -174,22 +176,27 @@ Je laisse libre cours à votre imagination pour les types des attributs, cependa
 - Point de vie : 520
 - Armes : Laser Cannon, Ls1-Laser cannons
 
+
 - Weapons :
+
 
 - Nom : L-s9 Laser cannons
 - Image : https://static.wikia.nocookie.net/frstarwars/images/a/ac/Canon_laser_L-s9.3.jpg/revision/latest/scale-to-width-down/349?cb=20190104095348
 - Dégâts : 45
 - Temps recharge : 0
 
+
 - Nom : Missile à concussion
 - Image : https://static.wikia.nocookie.net/frstarwars/images/3/3f/Concussion_Missile.jpg/revision/latest?cb=20180521120855
 - Dégâts : 65
 - Temps recharge : 2
 
+
 - Nom : Laser Cannon
 - Image : https://static.wikia.nocookie.net/frstarwars/images/7/79/Canon_laser_KX12.png/revision/latest/scale-to-width-down/350?cb=20180114093447
 - Dégâts : 55
 - Temps recharge : 1
+
 
 - Faire une route à ce moment-là, vers le component planet, qui prendra en paramètre un Guid de vaisseau (celui sur lequel l'utilisateur aura cliqué)
 - On rappelera dans le component planet quel vaisseau a été sélectionné auparavant, on permettra à l'utilisateur de revenir à la vue précédente (afaction component) 
