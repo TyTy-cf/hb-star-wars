@@ -1,14 +1,19 @@
 <div>
-  <div class="d-inline-flex justify-content-around">
+  <div>
+    <p class="h1 title-planet text-center my-5">Choose your side to fight !</p>
+  </div>
+  <div id="factionImage" class="d-inline-flex justify-content-around">
     <div class="img-planet text-center faction my-5" *ngFor="let faction of arrayFaction">
       <div class="faction-{{ faction.name }}" (mouseover)="setCssByFaction(faction.color, faction.name)" (mouseout)="refreshCssColor(faction.name)">
         <h3 class="title-planet" id="title-planet-{{ faction.name }}">{{ faction.name }}</h3>
-        <img (click)="selectedFactionByGuid(faction.guid)"  src="{{ faction.pathImage }}">
+        <img (mouseover)="selectedFactionByGuid(faction.guid)"  src="{{ faction.pathImage }}" (mouseout)="offSelected()">
       </div>
     </div>
   </div>
+  <div id="imageId" class="text-center">
+    <app-starship-faction  [guidFaction]="selectGuidFaction"></app-starship-faction>
+  </div>
 </div>
-<div>
-  <p class="h1 title-planet text-center my-5">Choose your side to fight !</p>
-</div>
-<app-starship-faction [guidFaction]="selectGuidFaction"></app-starship-faction>
+
+
+
