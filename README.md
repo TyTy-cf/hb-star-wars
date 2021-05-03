@@ -186,7 +186,7 @@ Je laisse libre cours à votre imagination pour les types des attributs, cependa
 - Temps recharge : 0
 
 
-- Nom : Missile à concussion
+- Nom : Concussion missile  
 - Image : https://static.wikia.nocookie.net/frstarwars/images/3/3f/Concussion_Missile.jpg/revision/latest?cb=20180521120855
 - Dégâts : 65
 - Temps recharge : 2
