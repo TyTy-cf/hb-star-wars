@@ -1,13 +1,13 @@
 
 <div *ngIf="guidFaction; else noGuid">
-  <div *ngIf="starship.length > 0; else noStarship">
-    <div class="card-vaisseau" *ngFor="let star of starship">
-      <p>{{star.name}}</p>
-      <p>{{star.guid}}</p>
+  <div class="d-inline-flex justify-content-around" *ngIf="starship.length > 0; else noStarship">
+    <div  *ngFor="let star of starship">
+      <p class="title-planet">{{star.name}}</p>
       <img routerLink="planet/{{star.guid.toString()}}" src="{{star.pathImage}}" alt="{{star.name}}">
     </div>
   </div>
 </div>
+<br>
 <ng-template #noStarship>
   <p class="title-planet">This faction has no starship</p>
 </ng-template>

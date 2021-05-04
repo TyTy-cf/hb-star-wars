@@ -34,14 +34,14 @@ export class WeaponService extends AbstractAttributesService{
 
     const ls9 = new Weapon();
     ls9.name = ' L-s9 Laser cannons';
-    ls9.pathImage = path + 'ls9.jpg';
+    ls9.pathImage = path + 'ls9.png';
     ls9.damage = 45;
     ls9.coolDown = 0;
     this.addAbstractAttributes(ls9);
 
     const missile = new Weapon();
     missile.name = 'Concussion missile';
-    missile.pathImage = path + 'concussion.jpg';
+    missile.pathImage = path + 'concussion.png';
     missile.damage = 65;
     missile.coolDown = 2;
     this.addAbstractAttributes(missile);
