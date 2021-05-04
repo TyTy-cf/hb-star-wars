@@ -10,6 +10,7 @@ import {FactionService} from '../Services/faction.service';
 import { FactionIndexComponent } from './faction-index/faction-index.component';
 import { StarshipFactionComponent } from './starship-faction/starship-faction.component';
 import { StarshipCardComponent } from './starship-card/starship-card.component';
+import { BattlegroundComponent } from './battleground/battleground.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { StarshipCardComponent } from './starship-card/starship-card.component';
     PlanetIndexComponent,
     FactionIndexComponent,
     StarshipFactionComponent,
-    StarshipCardComponent
+    StarshipCardComponent,
+    BattlegroundComponent
   ],
   imports: [
     BrowserModule,

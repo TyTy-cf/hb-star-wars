@@ -1,21 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {Planet} from '../../models/planet';
 import {PlanetService} from '../../Services/planet.service';
 import {ActivatedRoute} from '@angular/router';
 import {Starship} from '../../models/starship';
 import {StarshipService} from '../../Services/starship.service';
 import {Guid} from 'guid-typescript';
-import {Weapon} from '../../models/weapon';
 
 @Component({
   selector: 'app-planet-index',
   templateUrl: './planet-index.component.html',
   styleUrls: ['./planet-index.component.scss']
 })
-export class PlanetIndexComponent implements OnInit {
+export class PlanetIndexComponent implements OnInit, OnChanges {
   arrayPlanet: Array<Planet>;
   guidStarship: string;
   starship: Starship;
+
+  @Input()
+  guidPlanets: string;
+  planet: Planet;
   constructor(private planetService: PlanetService, private activatedRoute: ActivatedRoute, private starshipService: StarshipService) {
     this.arrayPlanet = new Array<Planet>();
   }
@@ -34,5 +37,11 @@ export class PlanetIndexComponent implements OnInit {
       console.log(this.starship.name);
     });
   }
-
+  ngOnChanges(changes: SimpleChanges): void {
+    const oldNameFaction = changes.guidPlanets.previousValue;
+    const newNameFaction = changes.guidPlanets.currentValue;
+    if (oldNameFaction !== newNameFaction) {
+      this.planet = this.planetService.getAbstractAttributesByGuid(Guid.parse(this.guidPlanets));
+    }
+  }
 }

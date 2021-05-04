@@ -3,7 +3,7 @@
   <div class="row gy-5 ourGrid"  *ngIf="starship.length > 0; else noStarship">
     <div class="col-4"  *ngFor="let star of starship">
       <p class="title-planet">{{star.name}}</p>
-      <img class="mb-3 text-center" style="height: 310px; width: 100%;" routerLink="planet/{{star.guid.toString()}}" src="{{star.pathImage}}" alt="{{star.name}}">
+      <img class="mb-3 text-center" style="height: 310px; width: 100%;"  src="{{star.pathImage}}" alt="{{star.name}}">
       <table class="table title-planet table-bordered">
         <tbody>
           <tr>
@@ -35,11 +35,12 @@
               Weapons
             </td>
             <td >
-              <img *ngFor="let weapons of star.weapons" src="{{ weapons.pathImage }}" style="max-width: 80px; max-height: 80px">
+              <img *ngFor="let weapons of star.weapons" src="{{ weapons.pathImage }}" alt="{{ weapons.name }}" style="max-width: 80px; max-height: 80px">
             </td>
           </tr>
         </tbody>
       </table>
+      <button class="btn btn-starwars" routerLink="planet/{{star.guid.toString()}}">Choose this !</button>
     </div>
   </div>
 </div>

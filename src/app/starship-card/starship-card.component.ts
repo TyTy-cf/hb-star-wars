@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {Starship} from '../../models/starship';
+import {StarshipService} from '../../services/starship.service';
+
 
 @Component({
   selector: 'app-starship-card',
@@ -6,8 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./starship-card.component.scss']
 })
 export class StarshipCardComponent implements OnInit {
+  arrayCards: Array<Starship>;
+  @Input()
+  guidCard: StarshipCardComponent;
 
-  constructor() { }
+  constructor(private starshipService: StarshipService) {
+    this.arrayCards = new Array<Starship>();
+  }
 
   ngOnInit(): void {
   }
