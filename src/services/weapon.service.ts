@@ -31,6 +31,27 @@ export class WeaponService extends AbstractAttributesService{
     mg7.damage = 50;
     mg7.coolDown = 2;
     this.addAbstractAttributes(mg7);
+
+    const ls9 = new Weapon();
+    ls9.name = ' L-s9 Laser cannons';
+    ls9.pathImage = path + 'ls9.jpg';
+    ls9.damage = 45;
+    ls9.coolDown = 0;
+    this.addAbstractAttributes(ls9);
+
+    const missile = new Weapon();
+    missile.name = 'Concussion missile';
+    missile.pathImage = path + 'concussion.jpg';
+    missile.damage = 65;
+    missile.coolDown = 2;
+    this.addAbstractAttributes(missile);
+
+    const laserCanon = new Weapon();
+    laserCanon.name = 'Laser Cannon';
+    laserCanon.pathImage = path + 'laser_canon_kx12.png';
+    laserCanon.damage = 55;
+    laserCanon.coolDown = 1;
+    this.addAbstractAttributes(laserCanon);
   }
 
   getArrayWeapon(): Array<Weapon> {

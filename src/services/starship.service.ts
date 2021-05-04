@@ -42,6 +42,36 @@ export class StarshipService {
     xWing.addWeapon(this.weaponService.getArrayWeapon()[1]);
     xWing.addWeapon(this.weaponService.getArrayWeapon()[2]);
     this.arrayStarships.push(xWing);
+
+    const intercepteur = new Starship();
+    intercepteur.name = 'Intercepteur TIE';
+    intercepteur.pathImage = path + 'intercepteur.jpg';
+    intercepteur.faction = this.factionService.getArrayFaction()[0];
+    intercepteur.hyperDrive = false;
+    intercepteur.shielding = 15;
+    intercepteur.hitPoint = 560;
+    intercepteur.addWeapon(this.weaponService.getArrayWeapon()[3]);
+    this.arrayStarships.push(intercepteur);
+
+    const advanced = new Starship();
+    advanced.name = 'Advanced TIE';
+    advanced.pathImage = path + 'advanced.png';
+    advanced.faction = this.factionService.getArrayFaction()[0];
+    advanced.hyperDrive = true;
+    advanced.shielding = 16;
+    advanced.hitPoint = 610;
+    advanced.addWeapon(this.weaponService.getArrayWeapon()[3]);
+    advanced.addWeapon(this.weaponService.getArrayWeapon()[4]);
+
+    const navette = new Starship();
+    navette.name = 'Navette T-4a';
+    navette.pathImage = path + 'navette.jpg';
+    navette.faction = this.factionService.getArrayFaction()[0];
+    navette.hyperDrive = true;
+    navette.shielding = 13;
+    navette.hitPoint = 520;
+    navette.addWeapon(this.weaponService.getArrayWeapon()[0]);
+    navette.addWeapon(this.weaponService.getArrayWeapon()[5]);
   }
 
   getArrayStarship(): Array<Starship> {
