@@ -26,6 +26,14 @@ export class FactionIndexComponent implements OnInit {
     titleFaction.style.color = color;
   }
 
+  blockCssFaction(name: string, color: string ): void{
+    const currentFaction = name;
+    const newFaction = document.getElementById('faction-' + currentFaction);
+    console.log(newFaction);
+    newFaction.style.color = color;
+    newFaction.style.filter = 'invert(100%)';
+  }
+
   refreshCssColor(faction: string): void {
     const titleFaction = document.getElementById('title-planet-' + faction);
     titleFaction.style.color = '#D6D61CFF';

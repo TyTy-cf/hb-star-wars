@@ -1,42 +1,44 @@
 
 <div class="container" *ngIf="guidFaction; else noGuid">
   <div class="row gy-5 ourGrid"  *ngIf="starship.length > 0; else noStarship">
-    <div class="col-4" style="max-width: 33.33%; max-height: 430px;" *ngFor="let star of starship">
+    <div class="col-4"  *ngFor="let star of starship">
       <p class="title-planet">{{star.name}}</p>
-      <img class="mb-3 text-center" routerLink="planet/{{star.guid.toString()}}" src="{{star.pathImage}}" alt="{{star.name}}">
+      <img class="mb-3 text-center" style="height: 310px; width: 100%;" routerLink="planet/{{star.guid.toString()}}" src="{{star.pathImage}}" alt="{{star.name}}">
       <table class="table title-planet table-bordered">
-        <tr>
-          <td>
-            Shielding
-          </td>
-          <td>
-            {{ star.shielding }}
-          </td>
-        </tr>
-        <tr>
-          <td>
-            HitPoint
-          </td>
-          <td>
-            {{ star.hitPoint }}
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Hyperdrive
-          </td>
-          <td>
-            {{star.hyperDrive}}
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Weapons
-          </td>
-          <td *ngFor="let weapons of star.weapons">
-            <img src="{{ weapons.pathImage }}" style="max-width: 80px; max-height: 80px">
-          </td>
-        </tr>
+        <tbody>
+          <tr>
+            <td>
+              Shielding
+            </td>
+            <td>
+              {{ star.shielding }}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              HitPoint
+            </td>
+            <td>
+              {{ star.hitPoint }}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Hyperdrive
+            </td>
+            <td>
+              {{star.hyperDrive}}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Weapons
+            </td>
+            <td >
+              <img *ngFor="let weapons of star.weapons" src="{{ weapons.pathImage }}" style="max-width: 80px; max-height: 80px">
+            </td>
+          </tr>
+        </tbody>
       </table>
     </div>
   </div>
