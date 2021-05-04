@@ -12,6 +12,9 @@ export class FactionIndexComponent implements OnInit {
 
   arrayFaction: Array<Faction>;
   selectGuidFaction: string;
+  color: string;
+  factionMere: string;
+  oldImageSelect: string;
 
   constructor(private factionService: FactionService) {
     this.arrayFaction = new Array<Faction>();
@@ -19,34 +22,27 @@ export class FactionIndexComponent implements OnInit {
 
   ngOnInit(): void {
     this.arrayFaction = this.factionService.getArrayFaction();
+    this.oldImageSelect = '';
   }
 
-  setCssByFaction(color: string, faction: string): void {
-    const titleFaction = document.getElementById('title-planet-' + faction);
-    titleFaction.style.color = color;
+  invertColorFaction(name: string): void{
+    this.factionMere = name;
+    const newImageSelect = 'img-faction-' + name;
+    const newImage = document.getElementById('img-faction-' + name).style.filter = 'invert(100%)';
+    if (this.oldImageSelect !== newImageSelect){
+        const oldImage = document.getElementById(this.oldImageSelect);
+        if (oldImage !== null) {
+        oldImage.style.filter = '';
+        }
+        this.oldImageSelect = newImageSelect;
+    }
   }
 
-  blockCssFaction(name: string, color: string): void{    
-    const newFaction = document.getElementById('title-faction-' + name);    
-    const image = document.getElementById('img-faction-' + name );
-    newFaction.style.color = color;
-    
-    image.style.filter = 'invert(100%)'
-    
-    
-    
-  }
-
-  refreshCssColor(faction: string): void {
-    const titleFaction = document.getElementById('title-planet-' + faction);
-    titleFaction.style.color = '#D6D61CFF';
-  }
-
-  selectedFactionByGuid(factionGuid: Guid, color: string, name:string): void{
+  selectedFactionByGuid(factionGuid: Guid, color: string, name: string): void{
     this.selectGuidFaction = factionGuid.toString();
-    this.blockCssFaction(name, color);
+    this.invertColorFaction(name);
     console.log(this.selectGuidFaction);
     console.log(color);
-    
   }
 }
+
