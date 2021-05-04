@@ -26,12 +26,15 @@ export class FactionIndexComponent implements OnInit {
     titleFaction.style.color = color;
   }
 
-  blockCssFaction(name: string, color: string ): void{
-    const currentFaction = name;
-    const newFaction = document.getElementById('faction-' + currentFaction);
-    console.log(newFaction);
+  blockCssFaction(name: string, color: string): void{    
+    const newFaction = document.getElementById('title-faction-' + name);    
+    const image = document.getElementById('img-faction-' + name );
     newFaction.style.color = color;
-    newFaction.style.filter = 'invert(100%)';
+    
+    image.style.filter = 'invert(100%)'
+    
+    
+    
   }
 
   refreshCssColor(faction: string): void {
@@ -39,8 +42,11 @@ export class FactionIndexComponent implements OnInit {
     titleFaction.style.color = '#D6D61CFF';
   }
 
-  selectedFactionByGuid(factionGuid: Guid): void{
+  selectedFactionByGuid(factionGuid: Guid, color: string, name:string): void{
     this.selectGuidFaction = factionGuid.toString();
+    this.blockCssFaction(name, color);
     console.log(this.selectGuidFaction);
+    console.log(color);
+    
   }
 }

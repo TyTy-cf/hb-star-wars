@@ -1,18 +1,20 @@
+
 <div>
   <div>
     <p class="h1 title-planet text-center my-5">Choose your side to fight !</p>
   </div>
   <div id="factionImage" class="d-inline-flex justify-content-around">
     <div class="img-planet text-center faction my-5" *ngFor="let faction of arrayFaction">
-      <div id="faction-{{ faction.name }}" (mouseover)="setCssByFaction(faction.color, faction.name)" (mouseout)="refreshCssColor(faction.name)" (click)="blockCssFaction(faction.name, faction.color)">
-        <h3 class="title-planet" id="title-planet-{{ faction.name }}">{{ faction.name }}</h3>
-        <img id="img-faction-{{faction.name}}" (click)="selectedFactionByGuid(faction.guid)" src="{{ faction.pathImage }}" >
+      <div id="faction-{{ faction.name }}" >
+        <h3 class="title-planet" id="title-faction-{{ faction.name }}">{{ faction.name }}</h3>
+        <img id="img-faction-{{faction.name}}" (click)="selectedFactionByGuid(faction.guid, faction.color, faction.name)" src="{{ faction.pathImage }}" (mouseover)="setCssByFaction(faction.color, faction.name)" (mouseout)="refreshCssColor(faction.name)">
       </div>
     </div>
-  </div>
+  </div>n
 </div>
 <div id="imageId" class="text-center my-5" >
   <app-starship-faction  [guidFaction]="selectGuidFaction"></app-starship-faction>
 </div>
 
 
+<!--<div id="faction-{{ faction.name }}" (mouseover)="setCssByFaction(faction.color, faction.name)" (mouseout)="refreshCssColor(faction.name)" (click)="blockCssFaction(faction.name, faction.color)"></div>-->
