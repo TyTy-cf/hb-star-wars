@@ -10,6 +10,7 @@ import {StarshipService} from '../../services/starship.service';
 })
 export class StarshipCardComponent implements OnInit {
   arrayCards: Array<Starship>;
+  starshipChoose: Starship;
   @Input()
   guidCard: StarshipCardComponent;
 
@@ -18,5 +19,6 @@ export class StarshipCardComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.starshipChoose = this.starshipService.getStarshipByCode('001');
   }
 }

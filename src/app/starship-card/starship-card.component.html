@@ -1,13 +1,13 @@
 
 
-<div *ngFor="let card of arrayCards" class="card" style="width: 18rem;">
-  <img src="{{ card.pathImage }}" class="card-img-top" alt="{{ card.name }}">
+<div class="card">
+  <img src="{{ starshipChoose.pathImage }}" class="card-img-top" alt="{{ starshipChoose.name }}">
   <div class="card-body">
-    <h5 class="card-title">{{ card.name }}</h5>
-    <p class="card-text">{{ card.hitPoint }}</p>
-    <p class="card-text">{{ card.shielding }}</p>
+    <h5 class="card-title">{{ starshipChoose.name }}</h5>
+    <p class="card-text">{{ starshipChoose.hitPoint }}</p>
+    <p class="card-text">{{ starshipChoose.shielding }}</p>
   </div>
-  <div *ngFor="let weapons of card.weapons">
+  <div *ngFor="let weapons of starshipChoose.weapons">
     <img src="{{weapons.pathImage}}" class="logoWeapon">
   </div>
 </div>

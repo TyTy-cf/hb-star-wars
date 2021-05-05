@@ -2,7 +2,7 @@
 <div class="d-flex planet ">
   <div class="img-planet text-center col-4" *ngFor="let planets of arrayPlanet">
     <div id="planet-{{planets.name}}">
-      <button class="btn-starwars" routerLink="/battleground/{{starship.code}}/{{planets.guid.toString()}}">Fight !</button>
+      <button class="btn-starwars" routerLink="/battleground/{{starship.code}}/{{planets.name}}">Fight !</button>
       <h3 class="title-planet">{{ planets.name }}</h3>
       <img  src="{{ planets.pathImage }}">
     </div>

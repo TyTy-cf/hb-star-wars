@@ -4,6 +4,7 @@ import {Planet} from '../models/planet';
 import {Guid} from 'guid-typescript';
 import {AbstractAttributes} from '../models/abstract-attributes';
 import {Weapon} from '../models/weapon';
+import {Starship} from '../models/starship';
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +29,11 @@ export class PlanetService extends AbstractAttributesService {
     alderande.pathImage = path + 'alderande.png';
     this.addAbstractAttributes(alderande);
   }
-  getArrayPlanet(): Array<Planet>{
-    return (this.getArrayAbstractAttributes() as Array<Planet>);
+  public getPlanetByName(name: string): Planet {
+    const anObject = this.arrayAbstractAttributes.filter((aa) => aa.name === name);
+    if (anObject.length === 0) {
+      throw new Error('Aucun objet avec ce Guid n\'a été trouvé');
+    }
+    return anObject[0];
   }
 }

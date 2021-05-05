@@ -8,7 +8,7 @@ const routes: Routes = [
   {path: 'faction', component: FactionIndexComponent},
   {path: '', component: FactionIndexComponent},
   {path: 'planet/:starshipGuid', component: PlanetIndexComponent},
-  {path: 'battleground/:codeStarship/:planetGuid', component: BattlegroundComponent}
+  {path: 'battleground/:codeStarship/:planetName', component: BattlegroundComponent}
 ];
 
 @NgModule({
