@@ -6,9 +6,9 @@
       <p class="card-text hitPoint">{{ battleStarship.hitPoint }}/{{ battleStarship.hitPoint }}</p>
       <p class="card-text shield">Shielding : {{ battleStarship.shielding }}</p>
     </div>
-      <div class="d-inline-flex justify-content-around"><img *ngFor="let weapons of battleStarship.weapons" (click)="pewPewPew()" src="{{weapons.pathImage}}" class="logoWeapon"></div>
+      <div class="d-inline-flex justify-content-around"><img *ngFor="let weapons of battleStarship.weapons" (click)="pewPewPew(battleStarship.faction.color)" src="{{weapons.pathImage}}" class="logoWeapon"></div>
   </div>
-
+  <div id="pewLight"></div>
   <div class="card float-end my-5">
     <img src="{{ randomeStarship.pathImage }}" class="card-img-top" alt="{{ randomeStarship.name }}">
     <div class="card-body">
@@ -16,6 +16,7 @@
       <p class="card-text hitPoint">{{ randomeStarship.hitPoint }}/{{ randomeStarship.hitPoint }}</p>
       <p class="card-text shield">Shielding : {{ randomeStarship.shielding }}</p>
     </div>
-    <div class="d-inline-flex justify-content-around"><img *ngFor="let weapons of randomeStarship.weapons" src="{{weapons.pathImage}}" (click)="pewPewPew()" class="logoWeapon"></div>
+    <div class="d-inline-flex justify-content-around"><img *ngFor="let weapons of randomeStarship.weapons" src="{{weapons.pathImage}}" (click)="pewPewPew(randomeStarship.faction.color)" class="logoWeapon"></div>
   </div>
 </div>
+

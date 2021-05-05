@@ -48,11 +48,15 @@ export class BattlegroundComponent implements OnInit {
   getRandomStarship(min: number, max: number): number{
     return Math.floor(Math.random() * (max - min) + min);
   }
-  pewPewPew(): void{
+  pewPewPew(color: string): void{
     this.audioPew.src = Weapon.urlPewPew;
     this.audioPew.volume = 0.1;
     // Charger la chanson et la jouer
     this.audioPew.load();
     this.audioPew.play();
+    const light = document.getElementById('pewLight');
+    light.style.backgroundColor = color;
+    light.style.border = 'solid 2px' + color ;
+    light.style.width = '200px';
   }
 }

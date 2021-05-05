@@ -27,3 +27,17 @@
   background-color: #102532;
   color: whitesmoke;
 }
+#pewLight {
+  animation: pew 1s 2;
+  position: relative;
+}
+@keyframes pew {
+  0% {
+    left: 0;
+    top: 0;
+  }
+  100% {
+    left: 200px;
+    top: 0;
+  }
+}
