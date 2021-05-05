@@ -28,13 +28,9 @@ export class PlanetIndexComponent implements OnInit, OnChanges {
     this.activatedRoute.params.subscribe((params) => {
       this.guidStarship = params.starshipGuid;
       const guid = Guid.parse(this.guidStarship);
-      console.log(guid);
-      console.log(guid.toString());
       for (const starship of this.starshipService.getArrayStarship()) {
-        console.log(starship.guid);
       }
       this.starship = this.starshipService.getStarshipByGuid(guid);
-      console.log(this.starship.name);
     });
   }
   ngOnChanges(changes: SimpleChanges): void {

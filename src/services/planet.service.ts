@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import {AbstractAttributesService} from './abstract-attributes.service';
 import {Planet} from '../models/planet';
+import {Guid} from 'guid-typescript';
+import {AbstractAttributes} from '../models/abstract-attributes';
+import {Weapon} from '../models/weapon';
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +28,7 @@ export class PlanetService extends AbstractAttributesService {
     alderande.pathImage = path + 'alderande.png';
     this.addAbstractAttributes(alderande);
   }
+  getArrayPlanet(): Array<Planet>{
+    return (this.getArrayAbstractAttributes() as Array<Planet>);
+  }
 }
-
-// C:\Developpement\Cours\Angular\Cours\HB\base-project\src\assets\images

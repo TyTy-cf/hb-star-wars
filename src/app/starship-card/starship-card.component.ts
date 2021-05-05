@@ -19,5 +19,4 @@ export class StarshipCardComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }
