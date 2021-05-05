@@ -41,8 +41,6 @@ export class FactionIndexComponent implements OnInit {
   selectedFactionByGuid(factionGuid: Guid, color: string, name: string): void{
     this.selectGuidFaction = factionGuid.toString();
     this.invertColorFaction(name);
-    console.log(this.selectGuidFaction);
-    console.log(color);
   }
 }
 

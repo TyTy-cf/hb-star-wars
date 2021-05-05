@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {PlanetService} from '../../services/planet.service';
 import {ActivatedRoute, Params} from '@angular/router';
 import {Guid} from 'guid-typescript';
-import {Planet} from '../../models/planet';
-
+import {StarshipService} from '../../services/starship.service';
 
 
 @Component({
@@ -13,26 +12,21 @@ import {Planet} from '../../models/planet';
 })
 export class BattlegroundComponent implements OnInit {
 
-  arrayPlanet: Array<Planet>;
   planet: string;
-  route: Params;
-  guids: Params;
   guidPlanet: Guid;
-  guidStarship: Guid;
+  codeStarship: string;
 
-  constructor(private planetService: PlanetService, route: ActivatedRoute) {
-    this.route = route.params.subscribe(value => {
-      this.guids = value;
-    });
-    console.log(this.guids);
-    this.guidPlanet = Guid.parse(this.guids.planetGuid);
-    this.guidStarship = Guid.parse(this.guids.starshipGuid);
-    console.log(this.guidPlanet);
-    console.log(this.guidStarship);
-    this.arrayPlanet = new Array<Planet>();
+  constructor(private planetService: PlanetService, private activatedRoute: ActivatedRoute, private starshipService: StarshipService) {
   }
 
   ngOnInit(): void {
-
+    this.activatedRoute.params.subscribe(value => {
+      this.guidPlanet = Guid.parse(value.planetGuid);
+      this.codeStarship = value.codeStarship;
+      console.log(this.starshipService);
+      console.log(this.guidPlanet);
+      console.log(this.codeStarship);
+      this.starshipService.getStarshipByCode(this.codeStarship);
+    });
   }
 }

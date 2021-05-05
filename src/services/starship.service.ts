@@ -29,6 +29,7 @@ export class StarshipService {
     tie.hyperDrive = false;
     tie.shielding = 14;
     tie.hitPoint = 500;
+    tie.code = '001';
     tie.addWeapon(this.weaponService.getArrayWeapon()[0]);
     this.arrayStarships.push(tie);
 
@@ -39,6 +40,7 @@ export class StarshipService {
     xWing.hyperDrive = true;
     xWing.shielding = 15;
     xWing.hitPoint = 480;
+    xWing.code = '002';
     xWing.addWeapon(this.weaponService.getArrayWeapon()[1]);
     xWing.addWeapon(this.weaponService.getArrayWeapon()[2]);
     this.arrayStarships.push(xWing);
@@ -50,6 +52,7 @@ export class StarshipService {
     intercepteur.hyperDrive = false;
     intercepteur.shielding = 15;
     intercepteur.hitPoint = 560;
+    intercepteur.code = '003';
     intercepteur.addWeapon(this.weaponService.getArrayWeapon()[3]);
     this.arrayStarships.push(intercepteur);
 
@@ -60,6 +63,7 @@ export class StarshipService {
     advanced.hyperDrive = true;
     advanced.shielding = 16;
     advanced.hitPoint = 610;
+    advanced.code = '004';
     advanced.addWeapon(this.weaponService.getArrayWeapon()[3]);
     advanced.addWeapon(this.weaponService.getArrayWeapon()[4]);
     this.arrayStarships.push(advanced);
@@ -71,6 +75,7 @@ export class StarshipService {
     navette.hyperDrive = true;
     navette.shielding = 13;
     navette.hitPoint = 520;
+    navette.code = '005';
     navette.addWeapon(this.weaponService.getArrayWeapon()[0]);
     navette.addWeapon(this.weaponService.getArrayWeapon()[5]);
     this.arrayStarships.push(navette);
@@ -82,7 +87,14 @@ export class StarshipService {
 
   public getStarshipByGuid(guid: Guid): Starship {
     const anObject = this.arrayStarships.filter((aa) => aa.guid.equals(guid));
-    console.log(anObject.length);
+    if (anObject.length === 0) {
+      throw new Error('Aucun objet avec ce Guid n\'a été trouvé');
+    }
+    return anObject[0];
+  }
+
+  public getStarshipByCode(code: string): Starship {
+    const anObject = this.arrayStarships.filter((aa) => aa.code === code);
     if (anObject.length === 0) {
       throw new Error('Aucun objet avec ce Guid n\'a été trouvé');
     }

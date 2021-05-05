@@ -28,7 +28,6 @@ import { BattlegroundComponent } from './battleground/battleground.component';
   providers: [
     WeaponService,
     FactionService,
-    StarshipService,
   ],
   bootstrap: [AppComponent]
 })

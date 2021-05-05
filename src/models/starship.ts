@@ -15,6 +15,16 @@ export class Starship extends AbstractAttributes {
   // tslint:disable-next-line:variable-name
   private _weapons: Array<Weapon>;
 
+  private _code: string;
+
+  get code(): string {
+    return this._code;
+  }
+
+  set code(value: string) {
+    this._code = value;
+  }
+
   get faction(): Faction {
     return this._faction;
   }
