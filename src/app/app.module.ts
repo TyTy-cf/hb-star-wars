@@ -6,15 +6,19 @@ import { AppComponent } from './app.component';
 import {WeaponService} from '../services/weapon.service';
 import {FactionService} from '../services/faction.service';
 import {StarshipService} from '../services/starship.service';
+import { PlanetFormComponent } from './planet-form/planet-form.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PlanetFormComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule
+    ],
   providers: [
     WeaponService,
     FactionService,

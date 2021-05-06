@@ -1,0 +1,51 @@
+
+<div class="col-6">
+  <form #formPlanet="ngForm">
+    <h2>Nouvelle planète</h2>
+    <div>
+      <input type="text"
+             #name="ngModel"
+             name="name"
+             [(ngModel)]="planet.name"
+             [class.is-invalid]="name.touched && !name.valid"
+             class="form-control"
+             placeholder="Nom"
+             required
+      >
+      <div *ngIf="name.invalid && (name.dirty || name.touched)"
+           class="alert">
+        <div *ngIf="name.errors.required">
+          Name is required.
+        </div>
+      </div>
+    </div>
+    <div>
+      <input type="text"
+             #pathImage="ngModel"
+             name="pathImage"
+             [(ngModel)]="planet.pathImage"
+             [class.is-invalid]="pathImage.touched && !pathImage.valid"
+             class="form-control"
+             placeholder="URL image"
+             pattern="^(http|https):\/\/(.*)"
+             required>
+    </div>
+    <div *ngIf="pathImage.invalid && (pathImage.dirty || pathImage.touched)"
+         class="alert">
+      <div *ngIf="pathImage.errors.required">
+        URL ne peut pas être vide
+      </div>
+      <div *ngIf="pathImage.errors.pattern">
+        URL ne commence pas par http ou https
+      </div>
+    </div>
+    <button (click)="addPlanet(); formPlanet.reset()"
+            [disabled]="!formPlanet.valid">
+      Ajouter
+    </button>
+  </form>
+  <div>
+    <p>{{planet?.name}}</p>
+    <p>{{planet?.pathImage}}</p>
+  </div>
+</div>
