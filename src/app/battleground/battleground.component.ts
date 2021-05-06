@@ -23,10 +23,12 @@ export class BattlegroundComponent implements OnInit {
   arrayStarship: Array<Starship>;
   randomeStarship: Starship;
   audioPew: HTMLAudioElement;
+  vie: number;
 
   constructor(private planetService: PlanetService, private activatedRoute: ActivatedRoute, private starshipService: StarshipService) {
     this.arrayStarship = new Array<Starship>();
     this.audioPew = new Audio();
+    this.vie = 13;
   }
 
   ngOnInit(): void {

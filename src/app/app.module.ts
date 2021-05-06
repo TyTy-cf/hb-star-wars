@@ -5,12 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {PlanetIndexComponent} from './planet-index/planet-index.component';
 import {WeaponService} from '../Services/weapon.service';
-import {StarshipService} from '../Services/starship.service';
 import {FactionService} from '../Services/faction.service';
 import { FactionIndexComponent } from './faction-index/faction-index.component';
 import { StarshipFactionComponent } from './starship-faction/starship-faction.component';
 import { StarshipCardComponent } from './starship-card/starship-card.component';
 import { BattlegroundComponent } from './battleground/battleground.component';
+import { NgbdProgressbarBasicComponent } from './ngbd-progressbar-basic/ngbd-progressbar-basic.component';
+import {NgbProgressbarModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -19,11 +20,13 @@ import { BattlegroundComponent } from './battleground/battleground.component';
     FactionIndexComponent,
     StarshipFactionComponent,
     StarshipCardComponent,
-    BattlegroundComponent
+    BattlegroundComponent,
+    NgbdProgressbarBasicComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbProgressbarModule
   ],
   providers: [
     WeaponService,
