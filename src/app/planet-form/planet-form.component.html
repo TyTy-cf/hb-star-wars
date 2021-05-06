@@ -2,7 +2,7 @@
 <div class="col-6">
   <form #formPlanet="ngForm">
     <h2>Nouvelle planète</h2>
-    <div>
+    <div class="form-group">
       <input type="text"
              #name="ngModel"
              name="name"
@@ -19,7 +19,7 @@
         </div>
       </div>
     </div>
-    <div>
+    <div class="form-group">
       <input type="text"
              #pathImage="ngModel"
              name="pathImage"
@@ -39,7 +39,8 @@
         URL ne commence pas par http ou https
       </div>
     </div>
-    <button (click)="addPlanet(); formPlanet.reset()"
+    <button class="btn btn-primary"
+            (click)="addPlanet(); formPlanet.reset()"
             [disabled]="!formPlanet.valid">
       Ajouter
     </button>
