@@ -2,6 +2,8 @@ import {AbstractAttributes} from './abstract-attributes';
 
 export class Weapon extends AbstractAttributes {
 
+  public static urlPewPew = 'http://www.sa-matra.net/sounds/starwars/TIE-Fire.wav';
+
   // tslint:disable-next-line:variable-name
   private _damage: number;
   // tslint:disable-next-line:variable-name

@@ -1,0 +1,19 @@
+
+<div class="card float-start my-5 col-5">
+  <img src="{{ starship.pathImage }}"
+       class="card-img-top"
+       alt="{{ starship.name }}"
+  >
+  <div class="card-body">
+    <h5 class="card-title  title-planet">{{ starship.name|uppercase}}</h5>
+    <p class="card-text hitPoint">{{ starship.hitPoint }}/{{ starship.hitPoint }}</p>
+  </div>
+  <div class="d-inline-flex justify-content-around">
+    <img *ngFor="let weapons of starship.weapons"
+         (click)="pewPewPew(starship.faction.color)"
+         src="{{weapons.pathImage}}"
+         alt="{{weapons.name}}"
+         class="logoWeapon"
+    >
+  </div>
+</div>

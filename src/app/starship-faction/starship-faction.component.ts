@@ -23,7 +23,6 @@ export class StarshipFactionComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     const oldIdFaction = changes.idFaction.previousValue;
     const newIdFaction = changes.idFaction.currentValue;
-    console.log(this.idFaction);
     if (oldIdFaction !== newIdFaction) {
       this.starship = this.starshipService.getStarshipByFactionId(this.idFaction);
     }

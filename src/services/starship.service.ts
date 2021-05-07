@@ -28,6 +28,7 @@ export class StarshipService {
     tie.hyperDrive = false;
     tie.shielding = 14;
     tie.hitPoint = 500;
+    tie.id = 1;
     tie.addWeapon(this.weaponService.getArrayWeapon()[0]);
     this.arrayStarships.push(tie);
 
@@ -38,6 +39,7 @@ export class StarshipService {
     xWing.hyperDrive = true;
     xWing.shielding = 15;
     xWing.hitPoint = 480;
+    xWing.id = 2;
     xWing.addWeapon(this.weaponService.getArrayWeapon()[1]);
     xWing.addWeapon(this.weaponService.getArrayWeapon()[2]);
     this.arrayStarships.push(xWing);
@@ -49,6 +51,7 @@ export class StarshipService {
     intercepteur.hyperDrive = false;
     intercepteur.shielding = 15;
     intercepteur.hitPoint = 560;
+    intercepteur.id = 3;
     intercepteur.addWeapon(this.weaponService.getArrayWeapon()[3]);
     this.arrayStarships.push(intercepteur);
 
@@ -59,6 +62,7 @@ export class StarshipService {
     advanced.hyperDrive = true;
     advanced.shielding = 16;
     advanced.hitPoint = 610;
+    advanced.id = 4;
     advanced.addWeapon(this.weaponService.getArrayWeapon()[3]);
     advanced.addWeapon(this.weaponService.getArrayWeapon()[4]);
     this.arrayStarships.push(advanced);
@@ -70,6 +74,7 @@ export class StarshipService {
     navette.hyperDrive = true;
     navette.shielding = 13;
     navette.hitPoint = 520;
+    navette.id = 5;
     navette.addWeapon(this.weaponService.getArrayWeapon()[0]);
     navette.addWeapon(this.weaponService.getArrayWeapon()[5]);
     this.arrayStarships.push(navette);
@@ -84,6 +89,8 @@ export class StarshipService {
   }
 
   public getStarshipById(id: number): Starship {
+    console.log(this.arrayStarships);
+    console.log(id);
     return this.arrayStarships.filter((ss) => ss.id === id)[0];
   }
 }

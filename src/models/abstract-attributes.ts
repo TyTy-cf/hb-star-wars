@@ -1,8 +1,6 @@
 
 export abstract class AbstractAttributes {
 
-  private static startingId = 1;
-
   // tslint:disable-next-line:variable-name
   protected _name: string;
   // tslint:disable-next-line:variable-name
@@ -30,8 +28,8 @@ export abstract class AbstractAttributes {
     return this._id;
   }
 
-  public constructor() {
-    this._id = AbstractAttributes.startingId;
-    AbstractAttributes.startingId++;
+  set id(id: number) {
+    this._id = id;
   }
+
 }

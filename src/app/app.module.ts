@@ -11,6 +11,8 @@ import {FormsModule} from '@angular/forms';
 import { FactionIndexComponent } from './faction-index/faction-index.component';
 import { StarshipFactionComponent } from './starship-faction/starship-faction.component';
 import { PlanetIndexComponent } from './planet-index/planet-index.component';
+import { BattlegroundComponent } from './battleground/battleground.component';
+import { CardStarshipComponent } from './card-starship/card-starship.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { PlanetIndexComponent } from './planet-index/planet-index.component';
     PlanetFormComponent,
     FactionIndexComponent,
     StarshipFactionComponent,
-    PlanetIndexComponent
+    PlanetIndexComponent,
+    BattlegroundComponent,
+    CardStarshipComponent
   ],
     imports: [
         BrowserModule,
