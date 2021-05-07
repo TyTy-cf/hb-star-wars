@@ -19,7 +19,7 @@ export class StarshipService {
   }
 
   private initializeDatas(): void {
-    const path = 'assets/images/planet/';
+    const path = 'assets/images/starship/';
 
     const tie = new Starship();
     tie.name = 'TIE/LN starfighter';

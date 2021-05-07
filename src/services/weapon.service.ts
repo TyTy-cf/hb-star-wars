@@ -26,7 +26,7 @@ export class WeaponService extends AbstractAttributesService{
 
     const mg7 = new Weapon();
     mg7.name = 'MG7 proton torpedo launcher';
-    mg7.pathImage = 'MG7_proton_torpedo_launcher.png';
+    mg7.pathImage = path + 'MG7_proton_torpedo_launcher.png';
     mg7.damage = 50;
     mg7.coolDown = 2;
     this.addAbstractAttributes(mg7);

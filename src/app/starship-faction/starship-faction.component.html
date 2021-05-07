@@ -1,0 +1,60 @@
+
+<div class="container" *ngIf="idFaction; else noGuid">
+  <div class="row gy-5 ourGrid"  *ngIf="starship.length > 0; else noStarship">
+    <div class="col-6"  *ngFor="let star of starship">
+      <p class="title-planet">{{star.name}}</p>
+      <img class="mb-3 text-center card-starship"
+           src="{{star.pathImage}}" alt="{{star.name}}"
+      >
+      <table class="table title-planet table-bordered">
+        <tbody>
+        <tr>
+          <td>
+            Shielding
+          </td>
+          <td>
+            {{ star.shielding }}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            HitPoint
+          </td>
+          <td>
+            {{ star.hitPoint }}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Hyperdrive
+          </td>
+          <td>
+            {{star.hyperDrive}}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Weapons
+          </td>
+          <td >
+            <img *ngFor="let weapon of star.weapons"
+                 src="{{ weapon.pathImage }}"
+                 alt="{{ weapon.name }}"
+                 class="small-card-starship"
+                 title="{{weapon.name}}"
+            >
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <button class="btn btn-starwars" routerLink="planet/{{star.id}}">Choose this !</button>
+    </div>
+  </div>
+</div>
+<br>
+
+<ng-template #noStarship>
+  <p class="title-planet">This faction has no starship</p>
+</ng-template>
+
+<ng-template #noGuid></ng-template>

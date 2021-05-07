@@ -9,12 +9,14 @@ import {StarshipService} from '../services/starship.service';
 import { PlanetFormComponent } from './planet-form/planet-form.component';
 import {FormsModule} from '@angular/forms';
 import { FactionIndexComponent } from './faction-index/faction-index.component';
+import { StarshipFactionComponent } from './starship-faction/starship-faction.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PlanetFormComponent,
-    FactionIndexComponent
+    FactionIndexComponent,
+    StarshipFactionComponent
   ],
     imports: [
         BrowserModule,
@@ -24,9 +26,6 @@ import { FactionIndexComponent } from './faction-index/faction-index.component';
   providers: [
     WeaponService,
     FactionService,
-    {
-      provide: StarshipService, useValue : [WeaponService, FactionService]
-    }
   ],
   bootstrap: [AppComponent]
 })
