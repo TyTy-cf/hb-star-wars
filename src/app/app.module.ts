@@ -10,13 +10,15 @@ import { PlanetFormComponent } from './planet-form/planet-form.component';
 import {FormsModule} from '@angular/forms';
 import { FactionIndexComponent } from './faction-index/faction-index.component';
 import { StarshipFactionComponent } from './starship-faction/starship-faction.component';
+import { PlanetIndexComponent } from './planet-index/planet-index.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PlanetFormComponent,
     FactionIndexComponent,
-    StarshipFactionComponent
+    StarshipFactionComponent,
+    PlanetIndexComponent
   ],
     imports: [
         BrowserModule,

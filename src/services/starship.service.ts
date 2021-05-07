@@ -75,11 +75,15 @@ export class StarshipService {
     this.arrayStarships.push(navette);
   }
 
-  getArrayStarship(): Array<Starship> {
+  public getArrayStarship(): Array<Starship> {
     return this.arrayStarships;
   }
 
   public getStarshipByFactionId(id: number): Array<Starship> {
     return this.arrayStarships.filter((ss) => ss.faction.id === id);
+  }
+
+  public getStarshipById(id: number): Starship {
+    return this.arrayStarships.filter((ss) => ss.id === id)[0];
   }
 }
