@@ -8,11 +8,13 @@ import {FactionService} from '../services/faction.service';
 import {StarshipService} from '../services/starship.service';
 import { PlanetFormComponent } from './planet-form/planet-form.component';
 import {FormsModule} from '@angular/forms';
+import { FactionIndexComponent } from './faction-index/faction-index.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PlanetFormComponent
+    PlanetFormComponent,
+    FactionIndexComponent
   ],
     imports: [
         BrowserModule,

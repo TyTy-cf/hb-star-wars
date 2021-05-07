@@ -1,5 +1,4 @@
 import {AbstractAttributes} from '../models/abstract-attributes';
-import {Guid} from 'guid-typescript';
 
 export abstract class AbstractAttributesService {
 
@@ -16,16 +15,16 @@ export abstract class AbstractAttributesService {
     return this.arrayAbstractAttributes;
   }
 
-  public getAbstractAttributesByGuid(guid: Guid): AbstractAttributes {
-    const anObject = this.arrayAbstractAttributes.filter((aa) => aa.guid.equals(guid));
+  public getAbstractAttributesById(id: number): AbstractAttributes {
+    const anObject = this.arrayAbstractAttributes.filter((aa) => aa.id === id);
     if (!anObject) {
       throw new Error('Aucun objet avec ce Guid n\'a été trouvé');
     }
     return anObject[0];
   }
 
-  public deleteAbstractAttributesByGuid(guid: Guid): void {
-    this.arrayAbstractAttributes = this.arrayAbstractAttributes.filter((aa) => !aa.guid.equals(guid));
+  public deleteAbstractAttributesById(id: number): void {
+    this.arrayAbstractAttributes = this.arrayAbstractAttributes.filter((aa) => aa.id !== id);
   }
 
   public addAbstractAttributes(newObject: AbstractAttributes): void {
