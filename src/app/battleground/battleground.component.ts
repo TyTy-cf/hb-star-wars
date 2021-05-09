@@ -13,9 +13,6 @@ import {UtilityService} from '../../services/utility.service';
 })
 export class BattlegroundComponent implements OnInit {
 
-  planetId: number;
-  starshipId: number;
-  foeStarshipId: number;
   planet: Planet;
   arrayStarship: Array<Starship>;
   playerStarship: Starship;
@@ -33,14 +30,11 @@ export class BattlegroundComponent implements OnInit {
   ngOnInit(): void {
     this.arrayStarship = this.starshipService.getArrayStarship();
     this.activatedRoute.params.subscribe((value) => {
-      this.planetId = value.planetId;
-      this.starshipId = value.starshipId;
+      this.playerStarship = this.starshipService.getStarshipById(value.starshipId);
+      this.planet = this.planetService.getAbstractAttributesById(value.planetId);
+      const randomNumber = this.utilityService.getRandomFromMinMax(0, this.arrayStarship.length);
+      this.foeStarship = this.arrayStarship[randomNumber];
     });
-    console.log(this.starshipService);
-    this.playerStarship = this.starshipService.getStarshipById(this.starshipId);
-    this.planet = this.planetService.getAbstractAttributesById(this.planetId);
-    const randomNumber = this.utilityService.getRandomFromMinMax(0, this.arrayStarship.length);
-    this.foeStarship = this.arrayStarship[randomNumber];
   }
 
 }

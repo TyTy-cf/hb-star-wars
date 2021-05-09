@@ -10,7 +10,7 @@ import {FactionService} from '../../services/faction.service';
 export class FactionIndexComponent implements OnInit {
 
   arrayFaction: Array<Faction>;
-  selectedIdFaction: number;
+  selectedIdFaction: string;
   oldImageSelect: string;
   factionMere: string;
   color: string;
@@ -37,7 +37,7 @@ export class FactionIndexComponent implements OnInit {
     }
   }
 
-  selectedFactionByGuid(factionId: number, color: string, name: string): void{
+  selectedFactionByGuid(factionId: string, color: string, name: string): void {
     this.selectedIdFaction = factionId;
     this.invertColorFaction(name);
   }

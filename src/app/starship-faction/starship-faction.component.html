@@ -1,5 +1,5 @@
 
-<div class="container" *ngIf="idFaction; else noGuid">
+<div class="container" *ngIf="idFaction; else noId">
   <div class="row gy-5 ourGrid"  *ngIf="starship.length > 0; else noStarship">
     <div class="col-6"  *ngFor="let star of starship">
       <p class="title-planet">{{star.name}}</p>
@@ -60,4 +60,4 @@
   <p class="title-planet">This faction has no starship</p>
 </ng-template>
 
-<ng-template #noGuid></ng-template>
+<ng-template #noId></ng-template>

@@ -6,7 +6,7 @@ export abstract class AbstractAttributes {
   // tslint:disable-next-line:variable-name
   protected _pathImage: string;
   // tslint:disable-next-line:variable-name
-  protected _id: number;
+  protected _id: string;
 
   get name(): string {
     return this._name;
@@ -24,11 +24,11 @@ export abstract class AbstractAttributes {
     this._pathImage = value;
   }
 
-  get id(): number {
+  get id(): string {
     return this._id;
   }
 
-  set id(id: number) {
+  set id(id: string) {
     this._id = id;
   }
 

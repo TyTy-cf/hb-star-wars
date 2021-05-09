@@ -1,0 +1,44 @@
+
+.card-img-top {
+  height: 18rem;
+  width: 18rem;
+}
+
+.card {
+  background-color: rgba(83, 83, 83, 0.5);
+  border: solid 2px blue;
+  width: 18rem;
+  text-align: center;
+}
+
+.logo-weapon {
+  height: 4rem;
+  width: 4rem;
+  border: whitesmoke solid 1px;
+  border-radius: 10%;
+
+  &:hover {
+    border: blue solid 1px;
+  }
+}
+
+.hitPoint {
+  border: solid 2px whitesmoke;
+  background-color: darkgreen;
+  color: whitesmoke;
+}
+
+.shield {
+  border: solid 2px whitesmoke;
+  background-color: #102532;
+  color: whitesmoke;
+}
+
+#pewLight {
+  position: relative;
+  animation: pew 1s 2;
+  width: 50%;
+  display: inline-block;
+  margin-top: 200px;
+  margin-left: 1rem;
+}

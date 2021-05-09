@@ -15,7 +15,7 @@ export abstract class AbstractAttributesService {
     return this.arrayAbstractAttributes;
   }
 
-  public getAbstractAttributesById(id: number): AbstractAttributes {
+  public getAbstractAttributesById(id: string): AbstractAttributes {
     const anObject = this.arrayAbstractAttributes.filter((aa) => aa.id === id);
     if (!anObject) {
       throw new Error('Aucun objet avec ce Guid n\'a été trouvé');
@@ -23,7 +23,7 @@ export abstract class AbstractAttributesService {
     return anObject[0];
   }
 
-  public deleteAbstractAttributesById(id: number): void {
+  public deleteAbstractAttributesById(id: string): void {
     this.arrayAbstractAttributes = this.arrayAbstractAttributes.filter((aa) => aa.id !== id);
   }
 

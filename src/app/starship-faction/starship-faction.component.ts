@@ -10,7 +10,7 @@ import {StarshipService} from '../../services/starship.service';
 export class StarshipFactionComponent implements OnInit, OnChanges {
 
   @Input()
-  idFaction: number;
+  idFaction: string;
   starship: Array<Starship>;
 
   constructor(private starshipService: StarshipService) {

@@ -12,26 +12,25 @@ export class CardStarshipComponent implements OnInit, OnChanges {
   @Input()
   starship: Starship;
   audioPew: HTMLAudioElement;
+  currentHitPoint: number;
 
   constructor() {
     this.audioPew = new Audio();
   }
 
   ngOnInit(): void {
+    this.currentHitPoint = this.starship.hitPoint;
+    this.audioPew.src = Weapon.urlPewPew;
+    this.audioPew.volume = 0.2;
   }
 
   ngOnChanges(changes: SimpleChanges): void {
   }
 
-  pewPewPew(color: string): void{
+  pewPewPew(): void {
     this.audioPew.load();
-    this.audioPew.src = Weapon.urlPewPew;
-    this.audioPew.volume = 1;
     // Charger la chanson et la jouer
     this.audioPew.play();
-    const light = document.getElementById('pewLight');
-    light.style.backgroundColor = color;
-    light.style.border = 'solid 2px' + color ;
   }
 
 }
