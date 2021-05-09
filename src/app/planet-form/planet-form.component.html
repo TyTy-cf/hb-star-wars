@@ -1,6 +1,6 @@
 
 <div class="col-6">
-  <form #formPlanet="ngForm">
+  <form (ngSubmit)="onSubmit()" #formPlanet="ngForm">
     <h2>Nouvelle planète</h2>
     <div class="form-group">
       <input type="text"
@@ -40,9 +40,14 @@
       </div>
     </div>
     <button class="btn btn-primary"
-            (click)="addPlanet(); formPlanet.reset()"
+            type="submit"
             [disabled]="!formPlanet.valid">
-      Ajouter
+      Soumettre
+    </button>
+    <button class="btn btn-primary"
+            (click)="newPlanet(); formPlanet.reset()"
+    >
+      Nouvelle planète
     </button>
   </form>
   <div>

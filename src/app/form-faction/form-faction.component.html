@@ -29,10 +29,15 @@
       </div>
     </div>
     <button class="btn btn-primary"
-            (click)="addFaction(); factionForm.reset()"
+            type="submit"
+            [disabled]="!factionForm.valid">
+      Soumettre
+    </button>
+    <button class="btn btn-primary"
+            (click)="newFaction(); factionForm.reset()"
             [disabled]="!factionForm.valid"
     >
-      Ajouter
+      Nouvelle faction
     </button>
   </form>
 </div>

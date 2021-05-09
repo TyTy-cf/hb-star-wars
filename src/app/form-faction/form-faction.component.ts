@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Faction} from '../../models/faction';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {FactionService} from '../../services/faction.service';
+import {Planet} from '../../models/planet';
 
 @Component({
   selector: 'app-form-faction',
@@ -12,8 +13,11 @@ export class FormFactionComponent implements OnInit {
 
   faction: Faction;
   factionFormGroup: FormGroup;
+  submitted: boolean;
 
-  constructor(private factionService: FactionService) { }
+  constructor(private factionService: FactionService) {
+    this.submitted = false;
+  }
 
   ngOnInit(): void {
     this.initializeForm();
@@ -46,9 +50,15 @@ export class FormFactionComponent implements OnInit {
     return this.factionFormGroup.get('pathImage');
   }
 
-  addFaction(): void {
+  newFaction(): void {
     // Lorsque l'on clique sur le bouton "Ajouter" on appelle la méthode ajout du service
     // Ce qui revient à push la planet dans le tableau
+    this.submitted = false;
+    this.faction = new Faction();
+  }
+
+  onSubmit(): void {
+    this.submitted = true;
     this.factionService.addAbstractAttributes(this.faction);
   }
 

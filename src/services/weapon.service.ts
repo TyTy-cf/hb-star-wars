@@ -15,7 +15,6 @@ export class WeaponService extends AbstractAttributesService{
     ls1.pathImage = path + 'ls1-laser_cannons.png';
     ls1.damage = 40;
     ls1.coolDown = 0;
-    ls1.id = '1';
     this.addAbstractAttributes(ls1);
 
     const kx9 = new Weapon();
@@ -23,7 +22,6 @@ export class WeaponService extends AbstractAttributesService{
     kx9.pathImage = path + 'KX9_laser_cannon.png';
     kx9.damage = 35;
     kx9.coolDown = 0;
-    kx9.id = '2';
     this.addAbstractAttributes(kx9);
 
     const mg7 = new Weapon();
@@ -31,7 +29,6 @@ export class WeaponService extends AbstractAttributesService{
     mg7.pathImage = path + 'MG7_proton_torpedo_launcher.png';
     mg7.damage = 50;
     mg7.coolDown = 2;
-    mg7.id = '3';
     this.addAbstractAttributes(mg7);
 
     const ls9 = new Weapon();
@@ -39,7 +36,6 @@ export class WeaponService extends AbstractAttributesService{
     ls9.pathImage = path + 'ls9.png';
     ls9.damage = 45;
     ls9.coolDown = 0;
-    ls9.id = '4';
     this.addAbstractAttributes(ls9);
 
     const missile = new Weapon();
@@ -47,7 +43,6 @@ export class WeaponService extends AbstractAttributesService{
     missile.pathImage = path + 'concussion.png';
     missile.damage = 65;
     missile.coolDown = 2;
-    missile.id = '5';
     this.addAbstractAttributes(missile);
 
     const laserCanon = new Weapon();
@@ -55,7 +50,6 @@ export class WeaponService extends AbstractAttributesService{
     laserCanon.pathImage = path + 'laser_canon_kx12.png';
     laserCanon.damage = 55;
     laserCanon.coolDown = 1;
-    laserCanon.id = '6';
     this.addAbstractAttributes(laserCanon);
   }
 

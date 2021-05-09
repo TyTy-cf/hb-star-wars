@@ -24,6 +24,7 @@ export class PlanetIndexComponent implements OnInit {
 
   ngOnInit(): void {
     this.arrayPlanet = this.planetService.getArrayAbstractAttributes();
+    console.log(this.arrayPlanet);
     this.activatedRoute.params.subscribe((params) => {
       this.starshipId = params.starshipId;
       console.log(this.starshipService.getStarshipById(this.starshipId));

@@ -1,6 +1,7 @@
 
 export abstract class AbstractAttributes {
 
+  protected static idCount = 1;
   // tslint:disable-next-line:variable-name
   protected _name: string;
   // tslint:disable-next-line:variable-name
@@ -30,6 +31,11 @@ export abstract class AbstractAttributes {
 
   set id(id: string) {
     this._id = id;
+  }
+
+  constructor() {
+    AbstractAttributes.idCount++;
+    this.id = '' + AbstractAttributes.idCount++;
   }
 
 }
