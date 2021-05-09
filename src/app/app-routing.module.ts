@@ -4,9 +4,13 @@ import {PlanetFormComponent} from './planet-form/planet-form.component';
 import {FactionIndexComponent} from './faction-index/faction-index.component';
 import {PlanetIndexComponent} from './planet-index/planet-index.component';
 import {BattlegroundComponent} from './battleground/battleground.component';
+import {FormMenuComponent} from './form-menu/form-menu.component';
+import {FormFactionComponent} from './form-faction/form-faction.component';
 
 const routes: Routes = [
+  {path: 'form', component: FormMenuComponent},
   {path: 'planetForm', component: PlanetFormComponent},
+  {path: 'factionForm', component: FormFactionComponent},
   {path: '', component: FactionIndexComponent},
   {path: 'planet/:starshipId', component: PlanetIndexComponent},
   {path: 'battleground/:starshipId/:planetId', component: BattlegroundComponent}

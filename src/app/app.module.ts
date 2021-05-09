@@ -7,12 +7,14 @@ import {WeaponService} from '../services/weapon.service';
 import {FactionService} from '../services/faction.service';
 import {StarshipService} from '../services/starship.service';
 import { PlanetFormComponent } from './planet-form/planet-form.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FactionIndexComponent } from './faction-index/faction-index.component';
 import { StarshipFactionComponent } from './starship-faction/starship-faction.component';
 import { PlanetIndexComponent } from './planet-index/planet-index.component';
 import { BattlegroundComponent } from './battleground/battleground.component';
 import { CardStarshipComponent } from './card-starship/card-starship.component';
+import { FormMenuComponent } from './form-menu/form-menu.component';
+import { FormFactionComponent } from './form-faction/form-faction.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +24,16 @@ import { CardStarshipComponent } from './card-starship/card-starship.component';
     StarshipFactionComponent,
     PlanetIndexComponent,
     BattlegroundComponent,
-    CardStarshipComponent
+    CardStarshipComponent,
+    FormMenuComponent,
+    FormFactionComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FormsModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
   providers: [
     WeaponService,
     FactionService,
