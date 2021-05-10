@@ -28,6 +28,9 @@ export class PlanetFormComponent implements OnInit {
 
   onSubmit(): void {
     this.submitted = true;
+    console.log(this.planet);
+    console.log(this.planetService.getArrayAbstractAttributes().length);
     this.planetService.addAbstractAttributes(this.planet);
+    console.log(this.planetService.getArrayAbstractAttributes().length);
   }
 }

@@ -15,6 +15,7 @@ import { BattlegroundComponent } from './battleground/battleground.component';
 import { CardStarshipComponent } from './card-starship/card-starship.component';
 import { FormMenuComponent } from './form-menu/form-menu.component';
 import { FormFactionComponent } from './form-faction/form-faction.component';
+import { FormWeaponComponent } from './form-weapon/form-weapon.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FormFactionComponent } from './form-faction/form-faction.component';
     BattlegroundComponent,
     CardStarshipComponent,
     FormMenuComponent,
-    FormFactionComponent
+    FormFactionComponent,
+    FormWeaponComponent
   ],
   imports: [
     BrowserModule,

@@ -34,4 +34,9 @@ export class Weapon extends AbstractAttributes {
   set onCoolDown(value: number) {
     this._onCoolDown = value;
   }
+
+  constructor() {
+    super();
+    this._onCoolDown = 0;
+  }
 }

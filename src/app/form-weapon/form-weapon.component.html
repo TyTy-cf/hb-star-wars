@@ -1,0 +1,96 @@
+
+<div class="col-6">
+  <form (ngSubmit)="onSubmit()" #formWeapon="ngForm">
+    <h2>Nouvelle planète</h2>
+    <div class="form-group">
+      <input type="text"
+             #nameWeapon="ngModel"
+             name="name"
+             [(ngModel)]="weapon.name"
+             [class.is-invalid]="nameWeapon.touched && !nameWeapon.valid"
+             class="form-control"
+             placeholder="Nom"
+             required
+      >
+      <div *ngIf="nameWeapon.invalid && (nameWeapon.dirty || nameWeapon.touched)"
+           class="alert-danger">
+        <div *ngIf="nameWeapon.errors.required">
+          Name is required.
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="text"
+             #pathImage="ngModel"
+             name="pathImage"
+             [(ngModel)]="weapon.pathImage"
+             [class.is-invalid]="pathImage.touched && !pathImage.valid"
+             class="form-control"
+             placeholder="URL image"
+             pattern="^(http|https):\/\/(.*)"
+             required>
+    </div>
+    <div *ngIf="pathImage.invalid && (pathImage.dirty || pathImage.touched)"
+         class="alert-danger">
+      <div *ngIf="pathImage.errors.required">
+        URL ne peut pas être vide
+      </div>
+      <div *ngIf="pathImage.errors.pattern">
+        URL ne commence pas par http ou https
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="number"
+             min="0"
+             #damage="ngModel"
+             name="damage"
+             [(ngModel)]="weapon.damage"
+             [class.is-invalid]="nameWeapon.touched && !nameWeapon.valid"
+             class="form-control"
+             placeholder="Dégâts de l'arme"
+             oninput="validity.valid||(value='');"
+             required
+      >
+      <div *ngIf="damage.invalid && (damage.dirty || damage.touched)"
+           class="alert-danger">
+        <div *ngIf="damage.errors.required">
+          Les dégâts sont requis.
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="number"
+             min="0"
+             #coolDown="ngModel"
+             name="coolDown"
+             [(ngModel)]="weapon.coolDown"
+             [class.is-invalid]="coolDown.touched && !coolDown.valid"
+             class="form-control"
+             placeholder="Temps de rechargement de l'arme"
+             oninput="validity.valid||(value='');"
+             required
+      >
+      <div *ngIf="coolDown.invalid && (coolDown.dirty || coolDown.touched)"
+           class="alert-danger">
+        <div *ngIf="coolDown.errors.required">
+          Le temps de rechargement est requis.
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary"
+            type="submit"
+            [disabled]="!formWeapon.valid">
+      Soumettre
+    </button>
+    <button class="btn btn-primary"
+            (click)="newWeapon(); formWeapon.reset()"
+    >
+      Nouvelle planète
+    </button>
+  </form>
+  <div>
+    <p>{{weapon?.name}}</p>
+    <p>{{weapon?.pathImage}}</p>
+  </div>
+</div>
+
