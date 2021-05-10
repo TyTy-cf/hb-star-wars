@@ -1,5 +1,5 @@
 
-<div class="d-inline-block align-middle"
+<div class="row"
      [ngStyle]="{
      'background-image':
         'url(' + planet.pathImage + ')',
@@ -9,12 +9,23 @@
      }"
 >
 
-  <div class="float-start">
-    <app-card-starship [starship]="playerStarship"></app-card-starship>
+  <div class="float-start col-3 my-auto">
+    <app-card-starship [starship]="playerStarship"
+                       [newHitPoint]="playerNewHitPoint"
+                       (shootingStarship)="setLastStarshipShooter($event)"
+    ></app-card-starship>
   </div>
 
-  <div class="float-end">
-    <app-card-starship [starship]="foeStarship"></app-card-starship>
+  <div class="col-4 text-center pew-pew-pew my-auto mx-auto"
+       [style.background-color]="iStarshipShooter?.starship.faction.color"
+  >
+  </div>
+
+  <div class="float-end col-3 my-auto">
+    <app-card-starship [starship]="foeStarship"
+                       [newHitPoint]="foeNewHitPoint"
+                       (shootingStarship)="setLastStarshipShooter($event)"
+    ></app-card-starship>
   </div>
 
 </div>

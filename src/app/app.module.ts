@@ -15,6 +15,7 @@ import { CardStarshipComponent } from './card-starship/card-starship.component';
 import { FormMenuComponent } from './form-menu/form-menu.component';
 import { FormFactionComponent } from './form-faction/form-faction.component';
 import { FormWeaponComponent } from './form-weapon/form-weapon.component';
+import { FormStarshipComponent } from './form-starship/form-starship.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { FormWeaponComponent } from './form-weapon/form-weapon.component';
     CardStarshipComponent,
     FormMenuComponent,
     FormFactionComponent,
-    FormWeaponComponent
+    FormWeaponComponent,
+    FormStarshipComponent
   ],
   imports: [
     BrowserModule,

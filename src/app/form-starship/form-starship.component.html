@@ -1,0 +1,154 @@
+
+<div class="col-6 mt-2">
+  <form [formGroup]="starshipFormGroup">
+    <!-- Form name -->
+    <div class="form-group">
+      <input [class.is-invalid]="name.invalid && name.touched"
+             placeholder="Nom"
+             class="form-control"
+             type="text"
+             name="name"
+             formControlName="name"
+      >
+      <div *ngIf="name.invalid && name.touched" class="invalid-feedback">
+        <div *ngIf="name.errors.required">
+          Name is required.
+        </div>
+      </div>
+    </div>
+
+    <!-- Form pathImage -->
+    <div class="form-group">
+      <input [class.is-invalid]="pathImage.invalid && pathImage.touched"
+             placeholder="URL image"
+             class="form-control"
+             type="text"
+             name="pathImage"
+             formControlName="pathImage"
+      >
+      <div *ngIf="pathImage.invalid && pathImage.touched" class="invalid-feedback">
+        <div *ngIf="pathImage.errors.required">
+          Le chemin de l'image est obligatoire
+        </div>
+      </div>
+    </div>
+
+    <!-- Form hitPoint -->
+    <div class="form-group">
+      <input [class.is-invalid]="hitPoint.invalid && hitPoint.touched"
+             placeholder="Point de vie de vaisseau"
+             class="form-control"
+             type="text"
+             name="hitPoint"
+             formControlName="hitPoint"
+             oninput="validity.valid||(value='');"
+      >
+      <div *ngIf="hitPoint.invalid && hitPoint.touched" class="invalid-feedback">
+        <div *ngIf="hitPoint.errors.required">
+          Les points de vies doivent être renseignés
+        </div>
+      </div>
+    </div>
+
+    <!-- Form shielding -->
+    <div class="form-group">
+      <input [class.is-invalid]="shielding.invalid && shielding.touched"
+             placeholder="Bouclier du vaisseau"
+             class="form-control"
+             type="text"
+             name="shielding"
+             formControlName="shielding"
+             oninput="validity.valid||(value='');"
+      >
+      <div *ngIf="shielding.invalid && shielding.touched" class="invalid-feedback">
+        <div *ngIf="shielding.errors.required">
+          Le bouclier doit être renseigné
+        </div>
+      </div>
+    </div>
+
+    <!-- Form hyperdrive -->
+    <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input"
+               type="radio"
+               value="true"
+               name="hyperDrive"
+               formControlName="hyperDrive"
+        > Oui
+      </div>
+      <div class="form-check">
+        <input class="form-check-input"
+               type="radio"
+               value="false"
+               name="hyperDrive"
+               formControlName="hyperDrive"
+        > Non
+      </div>
+      <div *ngIf="hyperDrive.invalid && hyperDrive.touched" class="invalid-feedback">
+        <div *ngIf="hyperDrive.errors.required">
+          Le bouclier doit être renseigné
+        </div>
+      </div>
+    </div>
+
+    <!-- Form faction -->
+    <div class="form-group mb-3">
+      <select class="form-select"
+              name="faction"
+              formControlName="faction"
+      >
+        <option *ngFor="let faction of factionService.getArrayFaction()"
+                [ngValue]="faction"
+        >
+          {{faction.name}}
+        </option>
+      </select>
+      <div *ngIf="faction.invalid && faction.touched" class="invalid-feedback">
+        <div *ngIf="faction.errors.required">
+          La faction doit être renseignée
+        </div>
+      </div>
+    </div>
+
+    <div formArrayName="weapons">
+      <div *ngFor="let _ of weapons.controls; index as i">
+        <h4>Weapon #{{i + 1}}</h4>
+        <select class="form-select"
+                [formControlName]="i"
+        >
+          <option *ngFor="let weapon of weaponService.getArrayWeapon()"
+                  [ngValue]="weapon"
+          >
+            {{weapon.name}}
+          </option>
+        </select>
+        <button type="button"
+                (click)="addWeaponField()"
+                class="btn btn-success"
+                [ngClass] = "'pad'"
+        >
+          +
+        </button>
+        <button type="button"
+                (click)="deleteWeaponField(i)"
+                class="btn btn-danger"
+        >
+          -
+        </button>
+      </div>
+    </div>
+
+    <!-- Le nom du formulaire par le code ne fonctionne pas avec le type="submit" -->
+    <button class="btn btn-primary"
+            (click)="addStarship()"
+            [disabled]="!starshipFormGroup.valid">
+      Soumettre
+    </button>
+    <button class="btn btn-primary"
+            (click)="newStarship(); starshipFormGroup.reset()"
+    >
+      Nouveau vaisseau
+    </button>
+  </form>
+</div>

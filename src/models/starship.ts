@@ -51,6 +51,10 @@ export class Starship extends AbstractAttributes {
     return this._weapons;
   }
 
+  set weapons(weapons: Array<Weapon>)  {
+    this._weapons = weapons;
+  }
+
   constructor() {
     super();
     this._weapons = new Array<Weapon>();
@@ -60,6 +64,16 @@ export class Starship extends AbstractAttributes {
     if (weapon) {
       this._weapons.push(weapon);
     }
+  }
+
+  copyStarship(starship: Starship): void {
+    this.hitPoint = starship.hitPoint;
+    this.faction = starship.faction;
+    this.shielding = starship.shielding;
+    this.hyperDrive = starship.hyperDrive;
+    this.weapons = starship.weapons;
+    this.name = starship.name;
+    this.pathImage = starship.pathImage;
   }
 
 }

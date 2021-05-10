@@ -6,11 +6,16 @@
   >
   <div class="card-body">
     <h5 class="card-title  title-planet">{{ starship.name|uppercase}}</h5>
-    <p class="card-text hitPoint">{{ currentHitPoint }}/{{ starship.hitPoint }}</p>
+    <p class="card-text"
+       [class.noHitPoint]="starship.hitPoint <= 0"
+       [class.hitPoint]="starship.hitPoint > 0"
+    >
+      {{ starship.hitPoint }}/{{ maxHitPoint }}
+    </p>
   </div>
   <div class="d-inline-flex justify-content-around">
     <img *ngFor="let weapon of starship.weapons"
-         (click)="pewPewPew()"
+         (click)="pewPewPew(weapon)"
          src="{{weapon.pathImage}}"
          alt="{{weapon.name}}"
          title="{{weapon.name}} : {{weapon.damage}} dégâts"

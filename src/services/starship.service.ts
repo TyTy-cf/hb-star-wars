@@ -79,6 +79,10 @@ export class StarshipService {
     return this.arrayStarships;
   }
 
+  public addStarship(starship: Starship): void {
+    this.arrayStarships.push(starship);
+  }
+
   public getStarshipByFactionId(id: string): Array<Starship> {
     return this.arrayStarships.filter((ss) => ss.faction.id === id);
   }
