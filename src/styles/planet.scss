@@ -1,0 +1,14 @@
+
+.planet {
+  width: 540px;
+  height: 400px;
+  margin-top: 0;
+  padding-top: 0;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.card-planet-link {
+  text-decoration: none;
+}

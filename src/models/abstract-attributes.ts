@@ -1,13 +1,13 @@
-import {Guid} from 'guid-typescript';
 
 export abstract class AbstractAttributes {
 
+  protected static idCount = 1;
   // tslint:disable-next-line:variable-name
   protected _name: string;
   // tslint:disable-next-line:variable-name
   protected _pathImage: string;
   // tslint:disable-next-line:variable-name
-  protected _guid: Guid;
+  protected _id: string;
 
   get name(): string {
     return this._name;
@@ -25,11 +25,17 @@ export abstract class AbstractAttributes {
     this._pathImage = value;
   }
 
-  get guid(): Guid {
-    return this._guid;
+  get id(): string {
+    return this._id;
   }
 
-  public constructor() {
-    this._guid = Guid.create();
+  set id(id: string) {
+    this._id = id;
   }
+
+  constructor() {
+    AbstractAttributes.idCount++;
+    this.id = '' + AbstractAttributes.idCount++;
+  }
+
 }

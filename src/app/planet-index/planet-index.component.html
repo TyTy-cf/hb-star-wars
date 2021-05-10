@@ -1,0 +1,14 @@
+
+<div>
+  <div class="img-planet text-center row">
+    <div class="col-lg-6 col-sm-12 mt-3" *ngFor="let planet of arrayPlanet">
+      <a class="card-planet-link" routerLink="/battleground/{{starshipId}}/{{planet.id}}">
+        <h3 class="title-planet">{{ planet.name }}</h3>
+        <img class="planet" src="{{ planet.pathImage }}" alt="{{planet.name}}">
+      </a>
+    </div>
+  </div>
+</div>
+<div>
+  <p class="h1 title-planet text-center my-5">Make our planet great again !</p>
+</div>

@@ -1,0 +1,14 @@
+
+.ourGrid {
+  grid-row-gap: 50px;
+}
+
+.card-starship {
+  height: 360px;
+  width: 360px;
+}
+
+.small-card-starship {
+  height: $width-card-starship;
+  width: $height-card-starship;
+}

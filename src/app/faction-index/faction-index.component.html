@@ -1,0 +1,27 @@
+<div>
+  <div>
+    <p class="h1 title-planet text-center my-5">Choose your side to fight !</p>
+  </div>
+  <div id="factionImage" class="d-inline-flex justify-content-around">
+    <div class="img-planet text-center faction my-5"
+         *ngFor="let faction of arrayFaction;"
+    >
+      <div id="faction-{{ faction.name }}" >
+        <h3 [style.color]="faction.color"
+            class="title-planet"
+            id="title-faction-{{ faction.name }}"
+        >
+          {{ faction.name }}
+        </h3>
+        <img id="img-faction-{{ faction.name }}"
+             alt="{{ faction.name }}"
+             (click)="selectedFactionByGuid(faction.id, faction.color, faction.name)"
+             src="{{ faction.pathImage }}"
+        >
+      </div>
+    </div>
+  </div>
+</div>
+<div id="imageId" class="text-center my-5" >
+  <app-starship-faction  [idFaction]="selectedIdFaction"></app-starship-faction>
+</div>

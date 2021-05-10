@@ -1,0 +1,43 @@
+
+<div class="col-6 mt-2">
+  <form [formGroup]="factionFormGroup" #factionForm="ngForm">
+    <input [class.is-invalid]="name.invalid && name.touched"
+           placeholder="Nom"s
+           class="form-control"
+           type="text"
+           name="name"
+           formControlName="name"
+    >
+    <div *ngIf="name.invalid && name.touched" class="invalid-feedback">
+      <div *ngIf="name.errors.required">
+        Name is required.
+      </div>
+    </div>
+    <input [class.is-invalid]="pathImage.invalid && pathImage.touched"
+           placeholder="URL image"
+           class="form-control"
+           type="text"
+           name="pathImage"
+           formControlName="pathImage"
+    >
+    <div *ngIf="pathImage.invalid && pathImage.touched" class="invalid-feedback">
+      <div *ngIf="pathImage.errors.required">
+        Le chemin de l'image est oblgiatoire
+      </div>
+      <div *ngIf="pathImage.errors.pattern">
+        Le chemin de l'image doit commencer par http ou https
+      </div>
+    </div>
+    <button class="btn btn-primary"
+            type="submit"
+            [disabled]="!factionForm.valid">
+      Soumettre
+    </button>
+    <button class="btn btn-primary"
+            (click)="newFaction(); factionForm.reset()"
+            [disabled]="!factionForm.valid"
+    >
+      Nouvelle faction
+    </button>
+  </form>
+</div>

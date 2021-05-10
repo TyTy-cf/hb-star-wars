@@ -1,0 +1,20 @@
+
+<div class="d-inline-block align-middle"
+     [ngStyle]="{
+     'background-image':
+        'url(' + planet.pathImage + ')',
+        'height': '960px',
+        'width': '100%',
+        'background-size': 'cover'
+     }"
+>
+
+  <div class="float-start">
+    <app-card-starship [starship]="playerStarship"></app-card-starship>
+  </div>
+
+  <div class="float-end">
+    <app-card-starship [starship]="foeStarship"></app-card-starship>
+  </div>
+
+</div>
