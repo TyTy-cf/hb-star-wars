@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Faction} from '../../models/faction';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
 import {FactionService} from '../../services/faction.service';
-import {Planet} from '../../models/planet';
 
 @Component({
   selector: 'app-form-faction',
@@ -11,12 +10,13 @@ import {Planet} from '../../models/planet';
 })
 export class FormFactionComponent implements OnInit {
 
+  //  Formulaire par le code
+
   faction: Faction;
   factionFormGroup: FormGroup;
   submitted: boolean;
 
   constructor(private factionService: FactionService) {
-    this.submitted = false;
   }
 
   ngOnInit(): void {
@@ -24,7 +24,10 @@ export class FormFactionComponent implements OnInit {
   }
 
   private initializeForm(): void {
-    this.faction = new Faction();
+    // On initialise un objet vide
+    this.newFaction();
+    // A contrario du formulaire par le template, le binding ne se fait pas en direct
+    // Ici, on initialise les champs à partir de ceux e notre objet (utile pour l'édition)
     this.factionFormGroup = new FormGroup(
       {
         name: new FormControl(
@@ -35,18 +38,19 @@ export class FormFactionComponent implements OnInit {
         pathImage: new FormControl(
           this.faction.pathImage, [
             Validators.required,
-            Validators.pattern('^(http|https):\\/\\/(.*)')
           ]
         )
       }
     );
   }
 
-  get name(): any {
+  // Ici, on fait l'équivalent du formulaire par le template de #name="ngModel"
+  //  Autrement dit : nommer notre input plus facilement pour les vérifications
+  get name(): AbstractControl {
     return this.factionFormGroup.get('name');
   }
 
-  get pathImage(): any {
+  get pathImage(): AbstractControl {
     return this.factionFormGroup.get('pathImage');
   }
 
@@ -59,7 +63,12 @@ export class FormFactionComponent implements OnInit {
 
   onSubmit(): void {
     this.submitted = true;
+    // Dans le cadre du formulaire par le code, il faut bien penser à set les valeurs de notre
+    // formulaire à notre objet inital, sinon il restera avec ses valeurs initiales
+    this.faction = this.factionFormGroup.value;
     this.factionService.addAbstractAttributes(this.faction);
+    // Et reset le form lorsque l'on a fait le traitement
+    this.factionFormGroup.reset();
   }
 
 }

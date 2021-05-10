@@ -1,8 +1,13 @@
 
 <div class="col-6 mt-2">
-  <form [formGroup]="factionFormGroup" #factionForm="ngForm">
+<!-- On déclare un formGroup à partir de l'objet de type FormGroup depuis notre .ts -->
+  <form [formGroup]="factionFormGroup">
+    <!--
+    On utulise plus les alias et ngModel, mais les getter fait depuis le code pour les
+    différents champs de notre formulaire, et il faut bien penser à ajouter le formControlName
+    -->
     <input [class.is-invalid]="name.invalid && name.touched"
-           placeholder="Nom"s
+           placeholder="Nom"
            class="form-control"
            type="text"
            name="name"
@@ -22,20 +27,17 @@
     >
     <div *ngIf="pathImage.invalid && pathImage.touched" class="invalid-feedback">
       <div *ngIf="pathImage.errors.required">
-        Le chemin de l'image est oblgiatoire
-      </div>
-      <div *ngIf="pathImage.errors.pattern">
-        Le chemin de l'image doit commencer par http ou https
+        Le chemin de l'image est obligatoire
       </div>
     </div>
+<!-- Le nom du formulaire par le code ne fonctionne pas avec le type="submit" -->
     <button class="btn btn-primary"
-            type="submit"
-            [disabled]="!factionForm.valid">
+            (click)="onSubmit()"
+            [disabled]="!factionFormGroup.valid">
       Soumettre
     </button>
     <button class="btn btn-primary"
-            (click)="newFaction(); factionForm.reset()"
-            [disabled]="!factionForm.valid"
+            (click)="newFaction(); factionFormGroup.reset()"
     >
       Nouvelle faction
     </button>

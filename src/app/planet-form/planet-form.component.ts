@@ -7,23 +7,25 @@ import {PlanetService} from '../../services/planet.service';
   templateUrl: './planet-form.component.html',
   styleUrls: ['./planet-form.component.scss']
 })
-export class PlanetFormComponent implements OnInit {
+export class PlanetFormComponent {
+
+  //  Formulaire par le template
 
   planet: Planet;
   submitted: boolean;
 
   constructor(private planetService: PlanetService) {
-    // Instanciation d'une planète : nécessaire sinon l'objet est undefined
-    this.planet = new Planet();
-    this.submitted = false;
-  }
-
-  ngOnInit(): void {
+    this.initialForm();
   }
 
   newPlanet(): void {
-    this.submitted = false;
+    this.initialForm();
+  }
+
+  initialForm(): void {
+    // Instanciation d'une planète : nécessaire sinon l'objet est undefined
     this.planet = new Planet();
+    this.submitted = false;
   }
 
   onSubmit(): void {
