@@ -37,7 +37,7 @@ export class BattlegroundComponent implements OnInit {
 
   ngOnInit(): void {
     this.audioBegin.src = 'assets/sound/theme/hello-there.mp3';
-    this.audioBegin.volume = 0.2;
+    this.audioBegin.volume = 1;
     this.audioBegin.load();
     this.audioBegin.play();
     this.arrayStarship = this.starshipService.getArrayStarship();

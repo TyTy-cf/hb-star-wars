@@ -30,6 +30,7 @@ export class FormStarshipComponent implements OnInit {
   addStarship(): void {
     this.submitted = true;
     this.starship = this.starshipFormGroup.value;
+    console.log(this.starship);
     this.starshipService.addStarship(this.starship);
     this.starshipFormGroup.reset();
   }

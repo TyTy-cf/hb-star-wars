@@ -112,10 +112,10 @@
     </div>
 
     <div formArrayName="weapons">
-      <div *ngFor="let _ of weapons.controls; index as i">
-        <h4>Weapon #{{i + 1}}</h4>
+      <div *ngFor="let _ of weapons.controls; index as indexFormControl">
+        <h4>Weapon #{{indexFormControl + 1}}</h4>
         <select class="form-select"
-                [formControlName]="i"
+                [formControlName]="indexFormControl"
         >
           <option *ngFor="let weapon of weaponService.getArrayWeapon()"
                   [ngValue]="weapon"
@@ -126,12 +126,11 @@
         <button type="button"
                 (click)="addWeaponField()"
                 class="btn btn-success"
-                [ngClass] = "'pad'"
         >
           +
         </button>
         <button type="button"
-                (click)="deleteWeaponField(i)"
+                (click)="deleteWeaponField(indexFormControl)"
                 class="btn btn-danger"
         >
           -
