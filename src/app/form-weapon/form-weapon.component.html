@@ -11,6 +11,7 @@
              class="form-control"
              placeholder="Nom"
              required
+             minlength="5"
       >
       <div *ngIf="nameWeapon.invalid && (nameWeapon.dirty || nameWeapon.touched)"
            class="alert-danger">

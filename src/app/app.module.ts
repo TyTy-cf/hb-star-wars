@@ -1,10 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {WeaponService} from '../services/weapon.service';
-import {FactionService} from '../services/faction.service';
 import { PlanetFormComponent } from './planet-form/planet-form.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FactionIndexComponent } from './faction-index/faction-index.component';
@@ -16,6 +13,8 @@ import { FormMenuComponent } from './form-menu/form-menu.component';
 import { FormFactionComponent } from './form-faction/form-faction.component';
 import { FormWeaponComponent } from './form-weapon/form-weapon.component';
 import { FormStarshipComponent } from './form-starship/form-starship.component';
+import {WeaponService} from '../services/weapon.service';
+import {FactionService} from '../services/faction.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +34,7 @@ import { FormStarshipComponent } from './form-starship/form-starship.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [
     WeaponService,
@@ -43,4 +42,8 @@ import { FormStarshipComponent } from './form-starship/form-starship.component';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+  // p22015
+
+}
