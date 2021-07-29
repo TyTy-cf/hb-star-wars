@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
     // Va rechercher la chanson à utiliser
     this.audio.src = '../assets/sound/theme/ThemeSong.mp3';
     // Baisse le son
-    this.audio.volume = 0.01;
+    this.audio.volume = 0.1;
     // Charger la chanson et la jouer
     // On force la musique au lancement : ont met le boolean à false, puis on appelle la fonction audioOnOff
     // Pour ne pas avoir le son au démarrage il faut mettre isPlay à true
