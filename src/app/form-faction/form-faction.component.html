@@ -5,13 +5,13 @@
     <!--
     On utulise plus les alias et ngModel, mais les getter fait depuis le code pour les
     différents champs de notre formulaire, et il faut bien penser à ajouter le formControlName
-    -->ZZ
+    -->
     <input [class.is-invalid]="name.invalid && name.touched"
+           [name]="'name'"
+           [formControlName]="'name'"
            placeholder="Nom"
            class="form-control"
            type="text"
-           name="name"
-           formControlName="name"
     >
     <div *ngIf="name.invalid && name.touched" class="invalid-feedback">
       <div *ngIf="name.errors.required">
@@ -19,11 +19,11 @@
       </div>
     </div>
     <input [class.is-invalid]="pathImage.invalid && pathImage.touched"
+           [name]="'pathImage'"
+           [formControlName]="'pathImage'"
            placeholder="URL image"
            class="form-control"
            type="text"
-           name="pathImage"
-           formControlName="pathImage"
     >
     <div *ngIf="pathImage.invalid && pathImage.touched" class="invalid-feedback">
       <div *ngIf="pathImage.errors.required">
